@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="517.0" prefWidth="673.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.OrdersController">
+   <children>
+      <ImageView fitHeight="539.0" fitWidth="741.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/f9ee3dc3-2efc-461a-943b-4225cfaa2fb3.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </ImageView>
+      <Label layoutX="34.0" layoutY="11.0" prefHeight="54.0" prefWidth="108.0" text="CNS" textFill="#fcf5f5">
+         <font>
+            <Font name="Comic Sans MS" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="52.0" text="Honey Collectors" textFill="#e1d7d7">
+         <font>
+            <Font name="Arial" size="10.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblOderPlacement" editable="true" layoutX="127.0" layoutY="249.0" opacity="0.88" prefHeight="247.0" prefWidth="393.0" style="-fx-background-color: #F0F3F4;">
+         <columns>
+            <TableColumn fx:id="colProductId" prefWidth="75.0" text="Product Id" />
+            <TableColumn fx:id="colProductName" prefWidth="93.0" text="Product Name" />
+            <TableColumn fx:id="colSellingPrice" prefWidth="76.0" text="Selling Price" />
+            <TableColumn fx:id="colqty" prefWidth="77.0" text="qty" />
+            <TableColumn fx:id="colAction" prefWidth="71.0" text="Action" />
+         </columns>
+      </TableView>
+      <Label layoutX="199.0" layoutY="52.0" opacity="0.94" text="ORDER PLACEMENT" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="579.0" layoutY="14.0" onAction="#btnDashBoardOnAction" prefHeight="19.0" prefWidth="77.0" style="-fx-background-color: #F7DC6F;" text="Dashboard">
+         <font>
+            <Font name="Calibri Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="592.0" layoutY="500.0" onAction="#btnLogOutOnAction" prefHeight="17.0" prefWidth="70.0" style="-fx-background-color: #F7DC6F;" text="Logout">
+         <font>
+            <Font name="Calibri Bold" size="10.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="10.0" layoutY="107.0" text="Orde Id:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="574.0" layoutY="115.0" text="Order Date:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="174.0" text="Product Id:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="168.0" layoutY="174.0" text="Product Name:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="328.0" layoutY="173.0" text="Selling Price:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="460.0" layoutY="172.0" text="qty On Hand:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="585.0" layoutY="172.0" text="qty:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbProductID" layoutX="81.0" layoutY="161.0" onAction="#cmbProductOnAction" />
+      <Label layoutX="9.0" layoutY="140.0" text="Customer Name:">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="616.0" layoutY="209.0" onAction="#btnAddOnAction" style="-fx-background-color: #F7F9F9;" text="ADD">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtQty" layoutX="615.0" layoutY="167.0" prefHeight="17.0" prefWidth="45.0" />
+   </children>
+</AnchorPane>

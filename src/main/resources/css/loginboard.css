@@ -1,0 +1,11 @@
+.signinBtn{
+    -fx-background-color: #f4d03f;
+}
+
+.backdrop{
+    -fx-background: linear-gradient(to bottom, #f4c506 0%, #f38304 100%);
+}
+
+.signAnchor{
+    -fx-background-color: #fffdfd;
+}

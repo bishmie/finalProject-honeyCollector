@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="622.0" prefWidth="736.0" styleClass="backdropAnchor" stylesheets="@../css/backDrop.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.QueenBeeManageController">
+   <children>
+      <Label layoutX="277.0" layoutY="25.0" opacity="0.94" text="QUEEN BEE MANAGEMENT" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="315.0" layoutY="259.0" prefHeight="46.0" prefWidth="394.0" style="-fx-background-color: #FDFEFE;">
+         <children>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#btnSetOnAction" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #F9E79F;" text="Set" textFill="#f8f8f5">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="107.0" layoutY="10.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #F7DC6F;" text="Update" textFill="#fffefa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="205.0" layoutY="10.0" onAction="#btnDeleteOnAction" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #F8C471;" text="Delete" textFill="#f8f8f6">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="308.0" layoutY="10.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #F4D03F;" text="Clear" textFill="#fcfbfa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="18.0" layoutY="5.0" text="Hello!">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="32.0" text="Here's the overview of Queenbee Management." textFill="#1b1601">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQueenId" layoutX="29.0" layoutY="127.0" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="184.0" promptText="Queeen Bee Id" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtBreedingHistory" layoutX="276.0" layoutY="127.0" prefHeight="35.0" prefWidth="184.0" promptText="Breeding History" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtBodyFeatures" layoutX="518.0" layoutY="126.0" prefHeight="35.0" prefWidth="184.0" promptText="Body Features" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtHealthStatus" layoutX="29.0" layoutY="204.0" prefHeight="35.0" prefWidth="184.0" promptText="Health Status" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtIntroDate" layoutX="278.0" layoutY="205.0" prefHeight="35.0" prefWidth="184.0" promptText="Introduce Date" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <Line endX="398.0" endY="-7.0" layoutX="283.0" layoutY="93.0" startX="-227.0" startY="-7.0" />
+      <TextField fx:id="txtVariety" layoutX="521.0" layoutY="203.0" prefHeight="35.0" prefWidth="184.0" promptText="Variety" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <Label layoutX="29.0" layoutY="329.0" opacity="0.94" text="Already assigned queen bees" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblQueenBee" layoutX="29.0" layoutY="359.0" prefHeight="249.0" prefWidth="247.0">
+        <columns>
+          <TableColumn fx:id="colQueenBeeId" prefWidth="87.0" text="Queen Bee Id" />
+          <TableColumn fx:id="colBeeHiveId" prefWidth="79.0" text="Bee Hive Id" />
+            <TableColumn fx:id="colLocation" text="Location" />
+        </columns>
+      </TableView>
+      <Label layoutX="380.0" layoutY="329.0" opacity="0.94" text="Available queen bees" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblQueenBee1" layoutX="377.0" layoutY="359.0" prefHeight="249.0" prefWidth="268.0">
+         <columns>
+            <TableColumn fx:id="colAvailableQueenId" prefWidth="87.0" text="Queen Bee Id" />
+            <TableColumn fx:id="colAvailableVariety" prefWidth="79.0" text="variety" />
+            <TableColumn fx:id="colAvailableBreedHis" prefWidth="100.0" text="Breeding History" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

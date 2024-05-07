@@ -1,0 +1,15 @@
+.signinBtn{
+    -fx-background-color: #fdfdfc;
+}
+
+.backdropBtn{
+    -fx-background: linear-gradient(to bottom, #0c0b0b 0%, #8f0d0d 100%);
+}
+
+
+.backdrop {
+    -fx-background: linear-gradient(to bottom, #f4c506 0%, #f4ab56 100%);
+}
+.controlIcon {
+    -fx-background: linear-gradient(to bottom, #e4dfdf 0%, #f4f3f0 100%);
+}
