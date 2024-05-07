@@ -1,60 +1,25 @@
 package lk.ijse.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Order {
     private String orderId;
-    private String orderDate;
-    private String   qty;
-    private String   deliveryType;
-    private String  description;
+    private Date orderDate;
+    private String qty;
+    private String deliveryType;
+    private String description;
+    private  String customerId;
+    private String paymentId;
 
-    public String getOrderId() {
-        return orderId;
-    }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public String getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(String orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public String getQty() {
-        return qty;
-    }
-
-    public void setQty(String qty) {
-        this.qty = qty;
-    }
-
-    public String getDeliveryType() {
-        return deliveryType;
-    }
-
-    public void setDeliveryType(String deliveryType) {
-        this.deliveryType = deliveryType;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId='" + orderId + '\'' +
-                ", orderDate='" + orderDate + '\'' +
-                ", qty='" + qty + '\'' +
-                ", deliveryType='" + deliveryType + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+    public Order(String orderId, String cusId, java.sql.Date date) {
     }
 }

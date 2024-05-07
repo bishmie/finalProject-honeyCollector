@@ -46,12 +46,12 @@ public class InventoryFormController {
             Connection connection = DbConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement(sql);
 
-            pstm.setString(1,id);
-            pstm.setString(2,type);
-            pstm.setString(3,description);
-            pstm.setString(4,qty);
-            pstm.setString(5,unitPrice);
-            pstm.setString(6,beehiveId);
+            pstm.setString(1, id);
+            pstm.setString(2, type);
+            pstm.setString(3, description);
+            pstm.setString(4, qty);
+            pstm.setString(5, unitPrice);
+            pstm.setString(6, beehiveId);
 
             boolean isSaved = pstm.executeUpdate() > 0;
             if (isSaved) {
@@ -72,14 +72,13 @@ public class InventoryFormController {
     }
 
 
-
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         String inventoryId = txtInventoryId.getText();
         String type = txtType.getText();
         String description = txtDescription.getText();
         String qty = txtQty.getText();
         String unitPrice = txtUnitPrice.getText();
-        String beehiveId= (String) cmbBeeHiveId.getValue();
+        String beehiveId = (String) cmbBeeHiveId.getValue();
 
         String sql = "UPDATE inventory SET type =?, description =?, qty =?, unitPrice =?, beehiveId =? WHERE inventoryId =?";
 
@@ -87,7 +86,7 @@ public class InventoryFormController {
             boolean isUpdate = InventoryRepo.update2(inventoryId, type, description, qty, unitPrice, beehiveId);
             if (isUpdate) {
                 new Alert(Alert.AlertType.INFORMATION, "Item Updated Successfully").show();
-            }else {
+            } else {
                 new Alert(Alert.AlertType.ERROR, "item does Not Updated").show();
             }
         } catch (SQLException e) {
@@ -101,7 +100,7 @@ public class InventoryFormController {
 
         try {
             boolean isDeleted = InventoryRepo.delete(id);
-            if(isDeleted) {
+            if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Item is successfully deleted!").show();
             }
         } catch (SQLException e) {
@@ -118,11 +117,11 @@ public class InventoryFormController {
 
         String sql = "SELECT * FROM inventory WHERE inventoryId =?";
 
-        try{
+        try {
             Connection connection = DbConnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement(sql);
 
-            pstm.setString(1,id);
+            pstm.setString(1, id);
 
             ResultSet resultSet = pstm.executeQuery();
             if (resultSet.next()) {
@@ -130,7 +129,7 @@ public class InventoryFormController {
                 String description = resultSet.getString(3);
                 String qty = resultSet.getString(4);
                 String unitPrice = resultSet.getString(5);
-                String beeHiveId= resultSet.getString(6);
+                String beeHiveId = resultSet.getString(6);
 
 
                 txtInventoryId.setText(id);
@@ -144,123 +143,8 @@ public class InventoryFormController {
                 new Alert(Alert.AlertType.ERROR, "Item Not Found").show();
             }
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.INFORMATION,"Item ID Not Found!");
+            new Alert(Alert.AlertType.INFORMATION, "Item ID Not Found!");
         }
-    }
-
-    public void btnTaskSearchOnAction(ActionEvent actionEvent) {
-        String id = txtSupplierId.getText();
-
-        String sql = "SELECT * FROM supplier WHERE supplierId =?";
-
-        try{
-            Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement(sql);
-
-            pstm.setString(1,id);
-
-            ResultSet resultSet = pstm.executeQuery();
-            if (resultSet.next()) {
-                String name = resultSet.getString(2);
-                String address = resultSet.getString(3);
-                String contact = resultSet.getString(4);
-                String email = resultSet.getString(5);
-                String inventoryId= resultSet.getString(6);
-
-
-                txtSupplierId.setText(id);
-                txtSupplierName.setText(name);
-                txtSupplierAddress.setText(address);
-                txtContact.setText(contact);
-                txtEmail.setText(email);
-                cmbInventoryId.setValue(inventoryId);
-
-            } else {
-                new Alert(Alert.AlertType.ERROR, "supplier Not Found").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.INFORMATION,"supplier ID Not Found!");
-        }
-    }
-
-    public void btnAssignOnAction(ActionEvent actionEvent) {
-        String id = txtSupplierId.getText();
-        String name = txtSupplierName.getText();
-        String address = txtSupplierAddress.getText();
-        String contact = txtContact.getText();
-        String email = txtEmail.getText();
-        String inventoryId = (String) cmbInventoryId.getValue();
-
-        String sql = "INSERT INTO supplier Values(?,?,?,?,?,?)";
-
-        try {
-            Connection connection = DbConnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement(sql);
-
-            pstm.setString(1,id);
-            pstm.setString(2,name);
-            pstm.setString(3,address);
-            pstm.setString(4,contact);
-            pstm.setString(5,email);
-            pstm.setString(6,inventoryId);
-
-            boolean isSaved = pstm.executeUpdate() > 0;
-            if (isSaved) {
-                new Alert(Alert.AlertType.INFORMATION, "Supplier Saved Successfully").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
-    }
-
-    private void clearSupplierFields() {
-        txtSupplierId.setText("");
-        txtSupplierName.setText("");
-        txtSupplierAddress.setText("");
-        txtContact.setText("");
-        txtEmail.setText("");
-        cmbInventoryId.setValue("");
-    }
-
-
-
-    public void btnUpdateSupplierOnAction(ActionEvent actionEvent) {
-        String supplierId = txtSupplierId.getText();
-        String name = txtSupplierName.getText();
-        String address = txtSupplierAddress.getText();
-        String contact = txtContact.getText();
-        String email = txtEmail.getText();
-        String inventoryId= (String) cmbInventoryId.getValue();
-
-        String sql = "UPDATE supplier SET name =?, address =?, contact =?, email =?, inventoryId =? WHERE supplierId =?";
-
-        try {
-            boolean isUpdate = SupplierRepo.update2(supplierId, name, address, contact, email, inventoryId);
-            if (isUpdate) {
-                new Alert(Alert.AlertType.INFORMATION, "Supplier Updated Successfully").show();
-            }else {
-                new Alert(Alert.AlertType.ERROR, "Supplier does Not Updated").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
-
-    }
-
-    public void btnDeleteSupplierOnAction(ActionEvent actionEvent) {
-        String id = txtSupplierId.getText();
-
-        try {
-            boolean isDeleted = SupplierRepo.delete(id);
-            if(isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION, "supplier is successfully deleted!").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
-    }
-
-    public void btnClearSupplierOnAction(ActionEvent actionEvent) {
-        clearSupplierFields();
     }
 }
+

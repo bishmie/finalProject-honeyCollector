@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="622.0" prefWidth="736.0" styleClass="backdropBtn" stylesheets="@../css/hiveManage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierFormController">
+   <children>
+      <Label layoutX="276.0" layoutY="24.0" opacity="0.94" text="INVENTORY MANAGEMENT" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="4.0" text="Hello!">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Inventory Management.">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Line endX="332.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
+      <Label layoutX="40.0" layoutY="119.0" text="Supplier Details">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupplierId" layoutX="36.0" layoutY="157.0" onAction="#btnTaskSearchOnAction" prefHeight="35.0" prefWidth="184.0" promptText="Supplier Id" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSupplierName" layoutX="275.0" layoutY="158.0" prefHeight="35.0" prefWidth="184.0" promptText="Supplier Name" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cmbInventoryId" editable="true" layoutX="518.0" layoutY="237.0" prefHeight="35.0" prefWidth="184.0" promptText="Inventory Id" style="-fx-background-color: #E5E7E9;" visibleRowCount="5" />
+      <AnchorPane layoutX="307.0" layoutY="314.0" prefHeight="46.0" prefWidth="394.0" style="-fx-background-color: #FDFEFE;">
+         <children>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#btnSetSupplierOnAction" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #F9E79F;" text="Set" textFill="#f8f8f5">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="107.0" layoutY="10.0" onAction="#btnUpdateSupplierOnAction" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #F7DC6F;" text="Update" textFill="#fffefa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="205.0" layoutY="10.0" onAction="#btnDeleteSupplierOnAction" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #F8C471;" text="Delete" textFill="#f8f8f6">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="308.0" layoutY="10.0" onAction="#btnClearSupplierOnAction" prefHeight="27.0" prefWidth="77.0" style="-fx-background-color: #F4D03F;" text="Clear" textFill="#fcfbfa">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txtSupplierAddress" layoutX="516.0" layoutY="158.0" prefHeight="35.0" prefWidth="184.0" promptText="Adddress" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtContact" layoutX="38.0" layoutY="237.0" prefHeight="35.0" prefWidth="184.0" promptText="Contact" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtEmail" layoutX="276.0" layoutY="237.0" prefHeight="35.0" prefWidth="184.0" promptText="Email" style="-fx-background-color: #E5E7E9;">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

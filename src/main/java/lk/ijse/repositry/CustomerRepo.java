@@ -27,7 +27,7 @@ public class CustomerRepo {
         return pstm.executeUpdate() > 0;
     }
     public static Customer searchById(String id) throws SQLException {
-        String sql = "SELECT * FROM customer WHERE cutomerId = ?";
+        String sql = "SELECT * FROM customer WHERE customerId = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -92,7 +92,7 @@ public class CustomerRepo {
     }
 
     public static List<String> getIds() throws SQLException {
-        String sql = "SELECT id FROM customer";
+        String sql = "SELECT customerId FROM customer";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 

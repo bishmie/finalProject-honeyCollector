@@ -75,6 +75,11 @@
                   <Font name="Calibri Bold" size="13.0" />
                </font>
             </JFXButton>
+            <JFXButton layoutX="26.0" layoutY="439.0" onAction="#btnSupplierManageOnAction" prefHeight="37.0" prefWidth="244.0" styleClass="signinBtn" stylesheets="@../css/dashboard.css" text="        Supplier Management">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <JFXButton alignment="TOP_RIGHT" layoutX="516.0" layoutY="50.0" onAction="#btnTotalSalesOnAction" prefHeight="60.0" prefWidth="155.0" text="Total Sale Amount">

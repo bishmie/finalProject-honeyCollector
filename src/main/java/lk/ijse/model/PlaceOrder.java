@@ -4,15 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class OrderProduct {
-
-    private String productId;
-    private String orderId;
-    private int qty;
-    private double sellingPrice;
-
+public class PlaceOrder {
+    private Order order;
+    private List<OrderProduct> odList;
 }

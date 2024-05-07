@@ -84,7 +84,7 @@ public class DashBoardController {
     }
 
     private void navigateToSupplierManagement() throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/SupplierForm.fxml"));
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/SupplierManagement.fxml"));
 
         Scene scene = new Scene(rootNode);
 
@@ -159,14 +159,14 @@ public class DashBoardController {
     }
 
     private void navigateToOrderForm() throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/OdersForm.fxml"));
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/PlaceOrderForm.fxml"));
 
         Scene scene = new Scene(rootNode);
 
         Stage stage = (Stage) this.rootNode.getScene().getWindow();
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setTitle("Login Form");
+        stage.setTitle("Order Form");
     }
 
 

@@ -2,6 +2,7 @@ package lk.ijse.repositry;
 
 import lk.ijse.db.DbConnection;
 import lk.ijse.model.Customer;
+import lk.ijse.model.OrderProduct;
 import lk.ijse.model.Product;
 
 import java.sql.Connection;
@@ -88,7 +89,9 @@ public class productRepo {
             productList.add(new Product(
                     resultSet.getString(1),
                     resultSet.getString(2),
-                   resultSet.getString(6)
+                   resultSet.getString(3),
+                   resultSet.getString(4),
+                   resultSet.getString(5)
 
             ));
         }
@@ -109,5 +112,41 @@ public class productRepo {
         return idList;
     }
 
-}
+    public static List<String> getCodes() throws SQLException {
+        String sql = "SELECT productId FROM product";
+        ResultSet resultSet = DbConnection.getInstance()
+                .getConnection()
+                .prepareStatement(sql)
+                .executeQuery();
+
+        List<String> codeList = new ArrayList<>();
+        while (resultSet.next()) {
+            codeList.add(resultSet.getString(1));
+        }
+        return codeList;
+    }
+
+    public static boolean update(List<OrderProduct> odList) throws SQLException {
+        for (OrderProduct od : odList) {
+            boolean isUpdateQty = updateQty(od.getProductId(), od.getQty());
+            if(!isUpdateQty) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean updateQty(String productId, int qty) throws SQLException {
+        String sql = "UPDATE product SET qtyOnHand = qtyOnHand - ? WHERE productId = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setInt(1, qty);
+        pstm.setString(2, productId);
+
+        return pstm.executeUpdate() > 0;
+    }
+    }
+
 
