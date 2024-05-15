@@ -5,6 +5,7 @@ import lk.ijse.model.Customer;
 import lk.ijse.model.OrderProduct;
 import lk.ijse.model.Product;
 
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,17 +52,18 @@ public class productRepo {
 
         return null;
     }
-    public static boolean update2(String ProductId, String ProductName, String SellingPrice,  String NetWeight, String Qty) throws SQLException {
+
+    public static boolean update2(String ProductId, String ProductName, String SellingPrice, String NetWeight, String Qty) throws SQLException {
         String sql = "UPDATE product SET productName =?, sellingPrice =?,netWeight =?, qty =? WHERE productId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
-        pstm.setObject(1,ProductName);
-        pstm.setObject(2,SellingPrice);
-        pstm.setObject(3,NetWeight);
-        pstm.setObject(4,Qty);
-        pstm.setObject(5,ProductId);
+        pstm.setObject(1, ProductName);
+        pstm.setObject(2, SellingPrice);
+        pstm.setObject(3, NetWeight);
+        pstm.setObject(4, Qty);
+        pstm.setObject(5, ProductId);
 
         return pstm.executeUpdate() > 0;
     }
@@ -89,14 +91,16 @@ public class productRepo {
             productList.add(new Product(
                     resultSet.getString(1),
                     resultSet.getString(2),
-                   resultSet.getString(3),
-                   resultSet.getString(4),
-                   resultSet.getString(5)
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+
 
             ));
         }
         return productList;
     }
+
     public static List<String> getIds() throws SQLException {
         String sql = "SELECT productId FROM product";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
@@ -129,7 +133,7 @@ public class productRepo {
     public static boolean update(List<OrderProduct> odList) throws SQLException {
         for (OrderProduct od : odList) {
             boolean isUpdateQty = updateQty(od.getProductId(), od.getQty());
-            if(!isUpdateQty) {
+            if (!isUpdateQty) {
                 return false;
             }
         }
@@ -137,7 +141,7 @@ public class productRepo {
     }
 
     private static boolean updateQty(String productId, int qty) throws SQLException {
-        String sql = "UPDATE product SET qtyOnHand = qtyOnHand - ? WHERE productId = ?";
+        String sql = "UPDATE product SET qty = qty - ? WHERE productId = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -147,6 +151,15 @@ public class productRepo {
 
         return pstm.executeUpdate() > 0;
     }
+
+    public static List<Product> getAllProductsFromDatabase() {
+        // Implement this method to fetch products from your database
+        // For example:
+        List<Product> productList = new ArrayList<>();
+        // Fetch products from the database and add them to productList
+        return productList;
     }
+
+}
 
 

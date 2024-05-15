@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
@@ -17,6 +18,7 @@ import lk.ijse.model.TM.CustomerTM;
 import lk.ijse.model.TM.HiveTM;
 import lk.ijse.repositry.BeeHiveRepo;
 import lk.ijse.repositry.CustomerRepo;
+import lk.ijse.util.Regex;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -74,8 +76,8 @@ public class HiveManageController {
                         beeHive.getLocation(),
                         beeHive.getPopulation(),
                         beeHive.getInspectionDate(),
-                        beeHive.getInspectionResult(),
-                        beeHive.getQueenId()
+                        beeHive.getInspectionResult()
+
                 );
                 obList.add(tm);
             }
@@ -90,6 +92,11 @@ public class HiveManageController {
 
 
     public void btnSetOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
 
         String id = txtHiveid.getText();
         String type = txtTYpe.getText();
@@ -97,10 +104,10 @@ public class HiveManageController {
         String population = txtPOpulation.getText();
         String inspectionDate = txtInspectiondate.getText();
         String inspectionResult = txtResults.getText();
-        String queenId = (String) cmbQueenid.getValue();
 
 
-        String sql = "INSERT INTO beehive Values(?,?,?,?,?,?,?)";
+
+        String sql = "INSERT INTO beehive Values(?,?,?,?,?,?)";
 
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -112,7 +119,7 @@ public class HiveManageController {
             pstm.setString(4,population);
             pstm.setString(5,inspectionDate);
             pstm.setString(6,inspectionResult);
-            pstm.setString(7,queenId);
+
 
 
             boolean isSaved = pstm.executeUpdate() > 0;
@@ -131,24 +138,29 @@ public class HiveManageController {
         txtPOpulation.setText("");
         txtInspectiondate.setText("");
         txtResults.setText("");
-        cmbQueenid.setValue(null);
+
         //
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtHiveid.getText();
         String type = txtTYpe.getText();
         String location = txtLocation.getText();
         String population = txtPOpulation.getText();
         String inspectionDate = txtInspectiondate.getText();
         String inspectionResult = txtResults.getText();
-        String queenId = (String) cmbQueenid.getValue();
+
         //
 
-        String sql = "UPDATE beehive SET type =?, location =?, population =?, inspectionDate =?, inspectionResult =?, queenId =? WHERE beehiveId =?";
+        String sql = "UPDATE beehive SET type =?, location =?, population =?, inspectionDate =?, inspectionResult =? WHERE beehiveId =?";
 
         try {
-            boolean isUpdate = BeeHiveRepo.update2(id, type, location, population, inspectionDate,inspectionResult,queenId);
+            boolean isUpdate = BeeHiveRepo.update2(id, type, location, population, inspectionDate,inspectionResult);
             if (isUpdate) {
                 new Alert(Alert.AlertType.INFORMATION, "hive Updated Successfully").show();
             }else {
@@ -161,6 +173,11 @@ public class HiveManageController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtHiveid.getText();
 
         try {
@@ -196,7 +213,7 @@ public class HiveManageController {
                 String population = resultSet.getString(4);
                 String inspectionDate = resultSet.getString(5);
                 String inspectionResult = resultSet.getString(6);
-                String queenId = resultSet.getString(7);
+
 
 
                 txtTYpe.setText(type);
@@ -204,7 +221,6 @@ public class HiveManageController {
                 txtPOpulation.setText(population);
                 txtInspectiondate.setText(inspectionDate);
                 txtResults.setText(inspectionResult);
-                cmbQueenid.setValue(queenId);
 
 
             } else {
@@ -213,6 +229,42 @@ public class HiveManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.INFORMATION,"hive ID Not Found!");
         }
+    }
+
+
+    public  void inspectionDateOnKeyReleased( ) {
+        Regex.setTextColor(lk.ijse.util.TextField.DATE, txtInspectiondate);
+    }
+
+    public void hiveIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.HID, txtHiveid);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.HID,txtHiveid)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DATE,txtInspectiondate)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtTYpe)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtLocation)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtPOpulation)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtResults)) return false;
+
+        return true;
+    }
+
+    public void typeOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtTYpe);
+
+    }
+
+    public void locationOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtLocation);
+    }
+
+    public void populationOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtPOpulation);
+    }
+
+    public void resultOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtResults);
     }
 }
 

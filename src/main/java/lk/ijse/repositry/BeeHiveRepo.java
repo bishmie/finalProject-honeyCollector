@@ -24,7 +24,7 @@ public class BeeHiveRepo {
         pstm.setObject(4, beeHive.getPopulation());
         pstm.setObject(5, beeHive.getInspectionDate());
         pstm.setObject(6, beeHive.getInspectionResult());
-        pstm.setObject(7, beeHive.getQueenId());
+
 
 
 
@@ -47,7 +47,7 @@ public class BeeHiveRepo {
             String inspectionResult = resultSet.getString(6);
             String queenId = resultSet.getString(7);
 
-            BeeHive beeHive= new BeeHive(beehiveId, type, location, population, inspectionDate, inspectionResult, queenId );
+            BeeHive beeHive= new BeeHive(beehiveId, type, location, population, inspectionDate, inspectionResult );
 
             return beeHive;
         }
@@ -65,7 +65,7 @@ public class BeeHiveRepo {
         pstm.setObject(4, beeHive.getPopulation());
         pstm.setObject(5, beeHive.getInspectionDate());
         pstm.setObject(6, beeHive.getInspectionResult());
-        pstm.setObject(7, beeHive.getQueenId());
+
 
         return pstm.executeUpdate() > 0;
     }
@@ -94,8 +94,8 @@ public class BeeHiveRepo {
                     resultSet.getString(3),
                     resultSet.getString(4),
                     resultSet.getString(5),
-                     resultSet.getString(6),
-                    resultSet.getString(7)
+                     resultSet.getString(6)
+
             ));
         }
         return beeHiveList;
@@ -116,7 +116,7 @@ public class BeeHiveRepo {
         return idList;
     }
 
-    public static boolean update2(String id, String type, String location, String population, String inspectionDate, String inspectionResult, String queenId) throws SQLException {
+    public static boolean update2(String id, String type, String location, String population, String inspectionDate, String inspectionResult) throws SQLException {
         String sql = "UPDATE beehive SET type =?, location =?,population =?, inspectionDate =?, inspectionResult =?, queenId =? WHERE beehiveId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -126,32 +126,12 @@ public class BeeHiveRepo {
         pstm.setObject(2,location);
         pstm.setObject(3,population);
         pstm.setObject(4,inspectionDate);
-        pstm.setObject(5,inspectionDate);
-        pstm.setObject(6,queenId);
+        pstm.setObject(5,inspectionResult);
         pstm.setObject(7,id);
 
         return pstm.executeUpdate() > 0;
     }
 
-    public static List<BeeHive> getAll2() throws SQLException {
-        String sql = "SELECT * FROM beehive";
-
-        Connection con = DbConnection.getInstance().getConnection();
-
-        ResultSet resultSet = con.createStatement().executeQuery(sql);
-
-        List<BeeHive> beeHiveList = new ArrayList<>();
-
-        while (resultSet.next()) {
-            beeHiveList.add(new BeeHive(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(6)  // not sure
-
-            ));
-        }
-        return beeHiveList;
-    }
 
     }
 

@@ -28,8 +28,9 @@ public class OrderRepo {
                 .prepareStatement(sql);
 
         pstm.setString(1, order.getOrderId());
-        pstm.setString(2, order.getCustomerId());
-        pstm.setDate(3, (Date) order.getOrderDate());
+        pstm.setDate(2, (Date) order.getOrderDate());
+        pstm.setString(3, order.getCustomerId());
+
 
         return pstm.executeUpdate() > 0;
     }

@@ -35,16 +35,22 @@ public class PlaceOrderFormController {
     public TableColumn<?, ?> colSellingPrice;
     public TableColumn<?, ?> colTotal;
     public TableColumn<?, ?> colAction;
+    public TextField txtCashReceived;
+    public Label lblOrderId;
+    public Label lblOderDate;
+    public Label lblSellingPrice;
+    public Label lblQtyOnHand;
+    public Label lblCustomerName;
+    public Label lblProductName;
     @FXML
     private ComboBox<String> cmbCustomerId;
-    public TextField txtOrderId;
+
     public TextField txtQty;
-    public TextField txtOrderDate;
-    public ComboBox cmbProductId;
-    public TextField txtSellingPrice;
-    public TextField txtQntOnHand;
-    public TextField txtProductName;
-    public TextField txtCustomerName;
+
+    public ComboBox<String> cmbProductId;
+
+
+
     public JFXButton btnAddToCart;
     public Label lblSubTotal;
     public Label lblCashReceived;
@@ -106,7 +112,7 @@ public class PlaceOrderFormController {
             String currentId = OrderRepo.getCurrentId();
 
             String nextOrderId = generateNextOrderId(currentId);
-            txtOrderId.setText(nextOrderId);
+            lblOrderId.setText(nextOrderId);
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -123,99 +129,117 @@ public class PlaceOrderFormController {
 
     private void setDate() {
         LocalDate now = LocalDate.now();
-        txtOrderDate.setText(String.valueOf(now));
+        lblOderDate.setText(String.valueOf(now));
     }
 
-        public void btnAddToCartOnAction (ActionEvent actionEvent){
-            String productId = (String) cmbProductId.getValue();
-            String productName = txtProductName.getText();
-            int qty = Integer.parseInt(txtQty.getText());
-            double sellingPrice = Double.parseDouble(txtSellingPrice.getText());
-            double total = qty * sellingPrice;
-            JFXButton btnRemove = new JFXButton("remove");
-            btnRemove.setCursor(Cursor.HAND);
+        public void btnAddToCartOnAction (ActionEvent actionEvent) {
 
-            btnRemove.setOnAction((e) -> {
-                ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
-                ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-                Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+                String code = cmbProductId.getValue();
+                String description = lblProductName.getText();
+                int qty = Integer.parseInt(txtQty.getText());
+                double unitPrice = Double.parseDouble(lblSellingPrice.getText());
+                double total = qty * unitPrice;
+                JFXButton btnRemove = new JFXButton("remove");
+                btnRemove.setCursor(Cursor.HAND);
 
-                if(type.orElse(no) == yes) {
-                    int selectedIndex = tblPlaceOrder.getSelectionModel().getSelectedIndex();
-                    obList.remove(selectedIndex);
+                btnRemove.setOnAction((e) -> {
+                    ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+                    ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-                    tblPlaceOrder.refresh();
-                    calculateNetTotal();
+                    Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+                    if(type.orElse(no) == yes) {
+                        int selectedIndex = tblPlaceOrder.getSelectionModel().getSelectedIndex();
+                        obList.remove(selectedIndex);
+
+                        tblPlaceOrder.refresh();
+                        calculateNetTotal();
+                    }
+                });
+
+                for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
+                    if(code.equals(colProductId.getCellData(i))) {
+
+                        CartTM tm = obList.get(i);
+                        qty += tm.getQty();
+                        total = qty * unitPrice;
+
+                        tm.setQty(qty);
+                        tm.setTotal(total);
+
+                        tblPlaceOrder.refresh();
+
+                        calculateNetTotal();
+                        return;
+                    }
                 }
-            });
 
-            for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
-                if(productId.equals(colProductId.getCellData(i))) {
+                CartTM tm = new CartTM(code, description, qty, unitPrice, total, btnRemove);
+                obList.add(tm);
 
-                    CartTM tm = obList.get(i);
-                    qty += tm.getQty();
-                    total = qty * sellingPrice;
-
-                    tm.setQty(qty);
-                    tm.setTotal(total);
-
-                    tblPlaceOrder.refresh();
-
-                    calculateNetTotal();
-                    return;
-                }
+                tblPlaceOrder.setItems(obList);
+                calculateNetTotal();
+                txtQty.setText("");
             }
 
-            CartTM tm = new CartTM(productId, productName, qty, sellingPrice, total, btnRemove);
-            obList.add(tm);
-
-            tblPlaceOrder.setItems(obList);
-            calculateNetTotal();
-            txtQty.setText("");
-        }
-    private void calculateNetTotal() {
+    private int calculateNetTotal() {
         int SubTotal = 0;
         for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
             SubTotal += (double) colTotal.getCellData(i);
         }
         lblSubTotal.setText(String.valueOf(SubTotal));
+        //btnMoneyReceiving();
+        return SubTotal;
     }
 
+
+
+    private void calculateBalance() {
+        int netTotal = calculateNetTotal();
+        int receivedAmount = Integer.parseInt(txtCashReceived.getText());
+        int balance = receivedAmount - netTotal;
+        lblBalance.setText(String.valueOf(balance));
+
+    }
+
+
         public void btnConfirmOrderOnAction (ActionEvent actionEvent){
-            String orderId = txtOrderId.getText();
-            String cusId = (String) cmbCustomerId.getValue();
-            Date date = Date.valueOf(LocalDate.now());
 
-            var order = new Order(orderId, cusId, date);
+                String orderId = lblOrderId.getText();
+                String cusId = cmbCustomerId.getValue();
+                Date date = Date.valueOf(LocalDate.now());
 
-            List<OrderProduct> odList = new ArrayList<>();
+                var order = new Order(orderId, cusId, date);
 
-            for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
-                CartTM tm = obList.get(i);
+                List<OrderProduct> odList = new ArrayList<>();
 
-                OrderProduct od = new OrderProduct(
-                        orderId,
-                        tm.getProductId(),
-                        tm.getQty(),
-                        tm.getSellingPrice()
-                );
+                for (int i = 0; i < tblPlaceOrder.getItems().size(); i++) {
+                    CartTM tm = obList.get(i);
 
-                odList.add(od);
-            }
+                    OrderProduct od = new OrderProduct(
+                            orderId,
+                            tm.getProductId(),
+                            tm.getQty(),
+                            tm.getSellingPrice()
+                    );
 
-            PlaceOrder po = new PlaceOrder(order, odList);
-            try {
-                boolean isPlaced = PlaceOrderRepo.placeOrder(po);
-                if(isPlaced) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Order Placed!").show();
-                } else {
-                    new Alert(Alert.AlertType.WARNING, "Order Placed Unsuccessfully!").show();
+                    odList.add(od);
                 }
-            } catch (SQLException e) {
-                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
+                PlaceOrder po = new PlaceOrder(order, odList);
+                try {
+                    boolean isPlaced = PlaceOrderRepo.placeOrder(po);
+                    if(isPlaced) {
+                        new Alert(Alert.AlertType.CONFIRMATION, "Order Placed!").show();
+                    } else {
+                        new Alert(Alert.AlertType.WARNING, "Order Placed Unsuccessfully!").show();
+                    }
+                } catch (SQLException e) {
+                    new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                }
             }
-        }
+
 
 
     public void cmbCustomerOnAction(ActionEvent actionEvent) {
@@ -223,7 +247,7 @@ public class PlaceOrderFormController {
         try {
             Customer customer = CustomerRepo.searchById(id);
             if(customer != null) {
-                txtCustomerName.setText(customer.getName());
+                lblCustomerName.setText(customer.getName());
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -237,9 +261,9 @@ public class PlaceOrderFormController {
         try {
             Product product = productRepo.searchById(code);
             if(product != null) {
-                txtProductName.setText(product.getProductName());
-                txtSellingPrice.setText(product.getSellingPrice());
-                txtQntOnHand.setText(product.getQty());
+                lblProductName.setText(product.getProductName());
+                lblSellingPrice.setText(product.getSellingPrice());
+                lblQtyOnHand.setText(product.getQty());
             }
 
             txtQty.requestFocus();
@@ -250,6 +274,14 @@ public class PlaceOrderFormController {
     }
 
     public void txtQtyOnAction(ActionEvent event) {btnAddToCartOnAction(event);
+
+    }
+
+    public void txtCashReceivedOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnMoneyReceiving() {
+        calculateBalance();
 
     }
 }

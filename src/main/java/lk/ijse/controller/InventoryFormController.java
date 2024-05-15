@@ -1,19 +1,25 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.db.DbConnection;
+import lk.ijse.repositry.BeeHiveRepo;
 import lk.ijse.repositry.CustomerRepo;
 import lk.ijse.repositry.InventoryRepo;
 import lk.ijse.repositry.SupplierRepo;
+import lk.ijse.util.Regex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class InventoryFormController {
 
@@ -32,7 +38,31 @@ public class InventoryFormController {
     public TextField txtContact;
     public TextField txtEmail;
 
+    public void initialize() {
+        getBeeHiveIds();
+    }
+
+    private void getBeeHiveIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> codeList = BeeHiveRepo.getIds();
+
+            for (String code : codeList) {
+                obList.add(code);
+            }
+            cmbBeeHiveId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void btnSetOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtInventoryId.getText();
         String type = txtType.getText();
         String description = txtDescription.getText();
@@ -73,6 +103,11 @@ public class InventoryFormController {
 
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String inventoryId = txtInventoryId.getText();
         String type = txtType.getText();
         String description = txtDescription.getText();
@@ -96,6 +131,11 @@ public class InventoryFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtInventoryId.getText();
 
         try {
@@ -145,6 +185,35 @@ public class InventoryFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.INFORMATION, "Item ID Not Found!");
         }
+    }
+
+    public  void inventoryIdOnKeyReleased( ) {
+        Regex.setTextColor(lk.ijse.util.TextField.IID, txtInventoryId);
+    }
+
+    public void typeOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtType);
+    }
+
+    public void descriptionOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtDescription);
+    }
+
+    public void qtyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.QTY, txtQty);
+    }
+
+    public void unitPriceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtUnitPrice);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.IID,txtInventoryId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtType)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtDescription)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.QTY,txtQty)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.PRICE,txtUnitPrice)) return false;
+
+        return true;
     }
 }
 

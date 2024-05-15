@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1380.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmployeeDashBoardController">
+   <children>
+      <AnchorPane layoutX="-5.0" layoutY="-5.0" prefHeight="710.0" prefWidth="277.0" style="-fx-background-color: #2E4053;">
+         <children>
+            <Label layoutX="155.0" layoutY="11.0" text="CNS" textFill="#fcf5f5">
+               <font>
+                  <Font name="Comic Sans MS" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="153.0" layoutY="52.0" text="Honey Collectors" textFill="#e1d7d7">
+               <font>
+                  <Font name="Arial" size="11.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="48.0" layoutY="290.0" onAction="#btnBeeKpeeperProfileOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" text="BeeKeeper Profile">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="48.0" layoutY="348.0" onAction="#btnCollectorOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" text="Collector Profile">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="36.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-menu-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="48.0" layoutY="231.0" onAction="#btnQueenBeeManagemetOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" text="Queen Bee Management">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="48.0" layoutY="174.0" onAction="#btnHiveManagemetOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" text="Hive Management">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="78.0" layoutY="640.0" onAction="#btnLogoutOnAction" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Logout">
+         <font>
+            <Font name="Calibri Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="ChildRootNode" layoutX="271.0" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053; -fx-background-radius: 0;">
+         <children>
+            <Pane fx:id="paneId" layoutX="10.0" layoutY="6.0" prefHeight="68.0" prefWidth="1094.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+               <children>
+                  <Label layoutX="27.0" layoutY="16.0" text="Welcome to Dashboard">
+                     <font>
+                        <Font name="Candara Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblLocalDate" layoutX="773.0" layoutY="19.0" prefHeight="17.0" prefWidth="116.0" text="dwdwd">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSetTime" layoutX="959.0" layoutY="20.0" text="sqsq">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="749.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-date-50.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="934.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8-clock-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <StackPane fx:id="root" layoutX="12.0" layoutY="84.0" prefHeight="456.0" prefWidth="682.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+               <children>
+                  <ImageView fitHeight="457.0" fitWidth="687.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/beekeeper-2650663_1280.jpg" />
+                     </image>
+                  </ImageView>
+               </children></StackPane>
+            <Label fx:id="totalCus" layoutX="359.0" layoutY="117.0" text="     " textFill="#a9cce3">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotalSup" layoutX="556.0" layoutY="118.0" text="       " textFill="#a9cce3">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="709.0" layoutY="236.0" prefHeight="305.0" prefWidth="391.0" style="-fx-background-color: white; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="708.0" layoutY="85.0" prefHeight="143.0" prefWidth="190.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="910.0" layoutY="85.0" prefHeight="143.0" prefWidth="190.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="748.0" layoutY="167.0" text="Total Hives" textFill="#aeb6bf">
+               <font>
+                  <Font name="Candara Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotalHives" layoutX="747.0" layoutY="123.0" text="    " textFill="#a9cce3">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="942.0" layoutY="169.0" text="Total QueenBees" textFill="#aeb6bf">
+               <font>
+                  <Font name="Candara Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotalQueenBees" layoutX="942.0" layoutY="118.0" text="     " textFill="#a9cce3">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotRevenue" layoutX="377.0" layoutY="280.0" prefHeight="14.0" prefWidth="177.0" textFill="#a9cce3">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="858.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-hive-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="1050.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-bees-64.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="878.0" layoutY="330.0" prefHeight="22.0" prefWidth="128.0" text="Today's Income" textFill="#aeb6bf">
+               <font>
+                  <Font name="Candara Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="877.0" layoutY="266.0" text="LKR">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTodayIncome" layoutX="921.0" layoutY="287.0" text="    " textFill="#a9cce3">
+               <font>
+                  <Font name="Arial Bold" size="38.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="67.0" fitWidth="67.0" layoutX="1017.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-decrease-50%20(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="43.0" layoutY="111.0" onAction="#btnHarvestManagementOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" text="Harvest Management">
+         <font>
+            <Font name="Calibri Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      
+   </children>
+</AnchorPane>

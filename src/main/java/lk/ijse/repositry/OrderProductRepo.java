@@ -19,15 +19,15 @@ public class OrderProductRepo {
             return true;
     }
     private static boolean save(OrderProduct od) throws SQLException {
-        String sql = "INSERT INTO orderProduct VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO OrderProduct VALUES(?, ?, ?, ?)";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setString(1, od.getOrderId());
-        pstm.setString(2, od.getProductId());
+        pstm.setString(1, od.getProductId());
+        pstm.setString(2, od.getOrderId());
         pstm.setInt(3, od.getQty());
-        pstm.setDouble(4, Double.parseDouble(String.valueOf(od.getSellingPrice())));
+        pstm.setDouble(4, od.getSellingPrice());
 
         return pstm.executeUpdate() > 0;    //false ->  |
     }

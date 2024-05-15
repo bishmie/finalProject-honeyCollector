@@ -15,11 +15,12 @@ public class BeeHive {
     private String population;
     private String inspectionDate;
     private String inspectionResult;
-    private String queenId;
 
 
+    public BeeHive(String string, String string1, String string2, String string3, String string4, String string5, String string6) {
+    }
 
-    public BeeHive(String queenId, String beehiveId, String location) {
+    public BeeHive(String location) {
     }
 }
 

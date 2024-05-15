@@ -8,8 +8,11 @@
 
 
 .backdrop {
-    -fx-background: linear-gradient(to bottom, #f4c506 0%, #f4ab56 100%);
+    -fx-background: linear-gradient(to bottom, #ffff66 0%, #ff6600 100%);
 }
 .controlIcon {
     -fx-background: linear-gradient(to bottom, #e4dfdf 0%, #f4f3f0 100%);
+}
+div {
+    background: linear-gradient(to bottom right, #ffff66 0%, #ff6600 100%);
 }

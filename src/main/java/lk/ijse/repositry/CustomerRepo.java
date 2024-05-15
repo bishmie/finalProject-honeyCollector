@@ -20,8 +20,8 @@ public class CustomerRepo {
         pstm.setObject(1, customer.getCustomerId());
         pstm.setObject(2, customer.getName());
         pstm.setObject(3, customer.getAddress());
-        pstm.setObject(4, customer.getEmail());
-        pstm.setObject(5, customer.getContact());
+        pstm.setObject(4, customer.getContact());
+        pstm.setObject(5, customer.getEmail());
 
 
         return pstm.executeUpdate() > 0;
@@ -104,20 +104,58 @@ public class CustomerRepo {
             idList.add(id);
         }
         return idList;
+
     }
 
-    public static boolean update2(String customerId, String Name, String Address,  String Email, String Contact) throws SQLException {
-        String sql = "UPDATE customer SET name =?, address =?,email =?, contact =? WHERE customerId =?";
+    public static boolean update2(String customerId, String Name, String Address,  String Contact, String Email) throws SQLException {
+        String sql = "UPDATE customer SET name =?, address =?,contact =?, email =? WHERE customerId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1,Name);
         pstm.setObject(2,Address);
-        pstm.setObject(3,Email);
-        pstm.setObject(4,Contact);
+        pstm.setObject(3,Contact);
+        pstm.setObject(4,Email);
         pstm.setObject(5,customerId);
 
         return pstm.executeUpdate() > 0;
+    }
+
+
+    public static List<String> getNames() {
+        String sql = "SELECT name FROM customer";
+        PreparedStatement pstm = null;
+        try {
+            pstm = DbConnection.getInstance().getConnection()
+                    .prepareStatement(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        List<String> idList = new ArrayList<>();
+
+        ResultSet resultSet = null;
+        try {
+            resultSet = pstm.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        while (true) {
+            try {
+                if (!resultSet.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            String id = null;
+            try {
+                id = resultSet.getString(1);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            idList.add(id);
+        }
+        return idList;
+
     }
 }

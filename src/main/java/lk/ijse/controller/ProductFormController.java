@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.db.DbConnection;
 import lk.ijse.model.Customer;
@@ -16,7 +17,9 @@ import lk.ijse.model.Product;
 import lk.ijse.model.TM.CustomerTM;
 import lk.ijse.model.TM.ProductTM;
 import lk.ijse.repositry.CustomerRepo;
+import lk.ijse.repositry.QueenBeeRepo;
 import lk.ijse.repositry.productRepo;
+import lk.ijse.util.Regex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,10 +43,15 @@ public class ProductFormController {
     public void initialize() {
         setCellValueFactory();
         loadAllCustomers();
+
     }
+
+
+
+
     private void setCellValueFactory() {
-        colProductId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colProductName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        colProductId.setCellValueFactory(new PropertyValueFactory<>("productId"));
+        colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
     }
@@ -64,6 +72,7 @@ public class ProductFormController {
                 obList.add(tm);
             }
             tblProduct.setItems(obList);
+            tblProduct.setVisible(true);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -72,6 +81,13 @@ public class ProductFormController {
 
 
     public void btnSetOnAction(ActionEvent actionEvent) {
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String ProductId = txtProductId.getText();
         String ProductName = txtProductName.getText();
         String SellingPrice = txtSellingPrice.getText();
@@ -111,7 +127,14 @@ public class ProductFormController {
 
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        String ProductId = txtProductName.getText();
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
+        String ProductId = txtProductId.getText();
         String ProductName = txtProductName.getText();
         String SellingPrice = txtSellingPrice.getText();
         String NetWeight = txtNetWeight.getText();
@@ -133,6 +156,13 @@ public class ProductFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String id = txtProductId.getText();
 
         try {
@@ -179,5 +209,33 @@ public class ProductFormController {
             new Alert(Alert.AlertType.INFORMATION,"Product ID Not Found!");
         }
     }
+
+    public void txtProductIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PROID, txtProductId);
     }
+
+    public void netWeightOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.WEIGHT, txtNetWeight);
+    }
+
+    public void productNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME, txtProductName);
+    }
+
+    public void qtyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.QTY, txtQty);
+    }
+
+    public void sellingPriceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtSellingPrice);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.PROID,txtProductId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.NAME,txtProductName)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.PRICE,txtSellingPrice)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.WEIGHT,txtNetWeight)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.QTY,txtQty)) return false;
+        return true;
+    }
+}
 

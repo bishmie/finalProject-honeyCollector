@@ -11,7 +11,6 @@ public class Product {
     private String  productName;
     private String sellingPrice;
     private String netWeight;
-   // private String qtyOnHand;
     private String qty;
 
     public Product(String productId, String productName, String sellingPrice, String netWeight, String qty) {
@@ -20,6 +19,9 @@ public class Product {
         this.sellingPrice = sellingPrice;
         this.netWeight = netWeight;
         this.qty = qty;
+    }
+
+    public Product(String string, String string1, String string2) {
     }
 
     public String getProductId() {

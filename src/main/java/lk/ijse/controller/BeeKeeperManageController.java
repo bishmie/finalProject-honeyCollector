@@ -1,18 +1,24 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.db.DbConnection;
+import lk.ijse.repositry.BeeHiveRepo;
 import lk.ijse.repositry.BeeKeeperManageRepo;
 import lk.ijse.repositry.CustomerRepo;
 import lk.ijse.repositry.TaskRepo;
+import lk.ijse.util.Regex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class BeeKeeperManageController {
     public AnchorPane rootNode;
@@ -29,7 +35,34 @@ public class BeeKeeperManageController {
     public ComboBox cmbBeeKeeperId;
     public TextField txtDescription;
 
+    public void initialize(){
+        getBeehiveId();
+
+    }
+
+    private void getBeehiveId() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+
+        try {
+            List<String> idList = BeeHiveRepo.getIds();
+
+            for(String id : idList) {
+                obList.add(id);
+            }
+
+            cmbBeeKeeperId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void btnSetOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtBeeKeeperId.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
@@ -71,6 +104,11 @@ public class BeeKeeperManageController {
 
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String beekeeperId = txtBeeKeeperId.getText();
         String Name = txtName.getText();
         String Address = txtAddress.getText();
@@ -95,6 +133,11 @@ public class BeeKeeperManageController {
 
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtBeeKeeperId.getText();
 
         try {
@@ -112,9 +155,14 @@ public class BeeKeeperManageController {
     }
 
     public void btnAssignTaskOnAction(ActionEvent actionEvent) {
+        if (!isValidTask()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtTaskId.getText();
         String name = txtTaskName.getText();
-        String description = txtDescription.getText();
+        String description = txtAreaDescription.getText();
         String date = String.valueOf(dpDueDate.getValue());
         String beekeeper = (String) cmbBeeKeeperId.getValue();
 
@@ -143,9 +191,14 @@ public class BeeKeeperManageController {
 
 
     public void btnUpdateTaskOnAction(ActionEvent actionEvent) {
+        if (!isValidTask()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String taskId = txtTaskId.getText();
         String Name = txtTaskName.getText();
-        String description = txtDescription.getText();
+        String description = txtAreaDescription.getText();
         String date = String.valueOf(dpDueDate.getValue());
         String beekeeperId = (String) cmbBeeKeeperId.getValue();
 
@@ -167,6 +220,11 @@ public class BeeKeeperManageController {
     }
 
     public void btnDeleteTaskOnAction(ActionEvent actionEvent) {
+        if (!isValidTask()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtTaskId.getText();
 
         try {
@@ -186,9 +244,9 @@ public class BeeKeeperManageController {
     private void clearTaskFields() {
         txtTaskId.setText("");
         txtTaskName.setText("");
-        txtDescription.setText("");
-        dpDueDate.setValue(LocalDate.parse("null"));
-        cmbBeeKeeperId.setValue(null);
+        txtAreaDescription.setText("");
+        dpDueDate.setValue(LocalDate.parse(" "));
+        cmbBeeKeeperId.setValue("");
 
     }
 
@@ -248,7 +306,7 @@ public class BeeKeeperManageController {
 
 
                 txtTaskName.setText(name);
-                txtDescription.setText(description);
+                txtAreaDescription.setText(description);
                 dpDueDate.setValue(LocalDate.parse(date));
                 cmbBeeKeeperId.setValue(beekeeperId);
 
@@ -260,5 +318,64 @@ public class BeeKeeperManageController {
             new Alert(Alert.AlertType.INFORMATION,"task ID Not Found!");
         }
     }
-}
+
+    public void contactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.CONTACT, txtContact);
+    }
+
+    public void emailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL, txtEmail);
+    }
+
+    public void taskIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.TID, txtTaskId);
+    }
+
+    public void beekeeperIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.BID, txtBeeKeeperId);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.BID,txtBeeKeeperId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.NAME,txtName)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtAddress)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.CONTACT,txtContact)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.EMAIL,txtEmail)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.PRICE,txtSalary)) return false;
+
+        return true;
+    }
+    public boolean isValidTask(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.TID,txtTaskId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField. DESCRIPTION,txtTaskName)) return false;
+        if (!Regex.setTextColorTxtArea(lk.ijse.util.TextField.DESCRIPTION,txtAreaDescription)) return false;
+
+        return true;
+    }
+
+    public void taskNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtTaskName);
+
+    }
+
+    public void salaryOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtSalary);
+    }
+
+    public void addressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION, txtAddress);
+    }
+
+    public void beekeeperNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME,txtName );
+    }
+
+    public void descriptionOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColorTxtArea(lk.ijse.util.TextField.DESCRIPTION,txtAreaDescription );
+
+    }
+
+
+    }
+
+
 

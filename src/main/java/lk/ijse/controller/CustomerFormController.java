@@ -5,18 +5,21 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
 import lk.ijse.model.Customer;
 import lk.ijse.model.TM.CustomerTM;
 import lk.ijse.repositry.CustomerRepo;
+import lk.ijse.util.Regex;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -49,8 +52,8 @@ public class CustomerFormController {
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("Contact"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
     }
 
     private void loadAllCustomers() {
@@ -78,6 +81,11 @@ public class CustomerFormController {
 
 
     public void btnSetOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
 
         String id = txtCustomerId.getText();
         String name = txtCustomerName.getText();
@@ -94,8 +102,8 @@ public class CustomerFormController {
             pstm.setString(1,id);
             pstm.setString(2,name);
             pstm.setString(3,address);
-            pstm.setString(4,email);
-            pstm.setString(5,contact);
+            pstm.setString(4,contact);
+            pstm.setString(5,email);
 
 
             boolean isSaved = pstm.executeUpdate() > 0;
@@ -131,8 +139,8 @@ public class CustomerFormController {
             if (resultSet.next()) {
                 String name = resultSet.getString(2);
                 String address = resultSet.getString(3);
-                String email = resultSet.getString(4);
-                String contact = resultSet.getString(5);
+                String contact = resultSet.getString(4);
+                String email = resultSet.getString(5);
 
 
                 txtCustomerName.setText(name);
@@ -147,16 +155,23 @@ public class CustomerFormController {
         }
     }
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String CustomerId = txtCustomerId.getText();
         String Name = txtCustomerName.getText();
         String Address = txtCustomerAddress.getText();
         String Contact = txtCustomerContact.getText();
         String Email = txtCustomerEmail.getText();
 
-        String sql = "UPDATE customer SET name =?, address =?, email =?, contact =? WHERE customerId =?";
+        String sql = "UPDATE customer SET name =?, address =?, contact =?, email =? WHERE customerId =?";
 
         try {
-            boolean isUpdate = CustomerRepo.update2(CustomerId, Name, Address, Email, Contact);
+            boolean isUpdate = CustomerRepo.update2(CustomerId, Name, Address, Contact, Email);
             if (isUpdate) {
                 new Alert(Alert.AlertType.INFORMATION, "Customer Updated Successfully").show();
             }else {
@@ -169,6 +184,11 @@ public class CustomerFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtCustomerId.getText();
 
         try {
@@ -216,5 +236,40 @@ public class CustomerFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setTitle("Login Form");
+    }
+
+    public void btnSendEmailsOnAction(ActionEvent actionEvent) throws IOException {
+        navigateToEmailForm();
+    }
+
+    private void navigateToEmailForm() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/emailForm.fxml"));
+        Parent PerenetRootNode = null;
+
+        PerenetRootNode = loader.load();
+
+
+        rootNode.getChildren().clear();
+        rootNode.getChildren().add(PerenetRootNode);
+
+
+    }
+
+    public void emailAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL, txtCustomerEmail);
+    }
+
+    public void contactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.CONTACT, txtCustomerContact);
+    }
+
+    public void customerIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.CID, txtCustomerId);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.CID,txtCustomerId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.EMAIL,txtCustomerEmail)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.CONTACT,txtCustomerContact)) return false;
+        return true;
     }
 }

@@ -1,20 +1,27 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
 import lk.ijse.model.TM.SupplierTM;
+import lk.ijse.repositry.BeeHiveRepo;
+import lk.ijse.repositry.InventoryRepo;
 import lk.ijse.repositry.SupplierRepo;
+import lk.ijse.util.Regex;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class SupplierFormController {
 
@@ -25,6 +32,25 @@ public class SupplierFormController {
     public TextField txtSupplierAddress;
     public TextField txtContact;
     public TextField txtEmail;
+
+    public void initialize() {
+        getInventoryIds();
+    }
+
+    private void getInventoryIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> codeList = InventoryRepo.getIds();
+
+            for (String code : codeList) {
+                obList.add(code);
+            }
+            cmbInventoryId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void btnTaskSearchOnAction(ActionEvent actionEvent) {
         String id = txtSupplierId.getText();
@@ -63,6 +89,13 @@ public class SupplierFormController {
 
 
     public void btnSetSupplierOnAction(ActionEvent actionEvent) {
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String id = txtSupplierId.getText();
         String name = txtSupplierName.getText();
         String address = txtSupplierAddress.getText();
@@ -102,6 +135,12 @@ public class SupplierFormController {
 
 
     public void btnUpdateSupplierOnAction(ActionEvent actionEvent) {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String supplierId = txtSupplierId.getText();
         String name = txtSupplierName.getText();
         String address = txtSupplierAddress.getText();
@@ -139,5 +178,33 @@ public class SupplierFormController {
 
     public void btnClearSupplierOnAction(ActionEvent actionEvent) {
         clearSupplierFields();
+    }
+
+    public void supplierOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.SID, txtSupplierId);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.SID,txtSupplierId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.NAME,txtSupplierName)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.ADDRESS,txtSupplierAddress)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.CONTACT,txtContact)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.EMAIL,txtEmail)) return false;
+        return true;
+    }
+
+    public void supNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME, txtSupplierName);
+    }
+
+    public void addressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.ADDRESS, txtSupplierAddress);
+    }
+
+    public void contactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.CONTACT, txtContact);
+    }
+
+    public void emailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL, txtEmail);
     }
 }

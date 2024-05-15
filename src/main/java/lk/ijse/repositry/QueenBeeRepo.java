@@ -1,7 +1,7 @@
 package lk.ijse.repositry;
 
 import lk.ijse.db.DbConnection;
-import lk.ijse.model.Customer;
+import lk.ijse.model.BeeHive;
 import lk.ijse.model.beeQueen;
 
 import java.sql.Connection;
@@ -13,8 +13,8 @@ import java.util.List;
 
 public class QueenBeeRepo {
 
-    public static boolean update2(String queenbeeId, String breedingHistory, String bodyFeatures, String healthStatus, String introducedDate, String variety) throws SQLException {
-        String sql = "UPDATE beequeen SET breedingHistory =?, bodyFeatures =?, healthStatus =?, introducedDate =?, variety =? WHERE queenId =?";
+    public static boolean update2(String queenbeeId, String breedingHistory, String bodyFeatures, String healthStatus, String introducedDate, String beehiveId, String variety) throws SQLException {
+        String sql = "UPDATE beequeen SET breedingHistory =?, bodyFeatures =?, healthStatus =?, introducedDate =?, beehiveId =? , variety =? WHERE queenId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -23,8 +23,9 @@ public class QueenBeeRepo {
         pstm.setObject(2, bodyFeatures);
         pstm.setObject(3, healthStatus);
         pstm.setObject(4, introducedDate);
-        pstm.setObject(5, variety);
-        pstm.setObject(6, queenbeeId);
+        pstm.setObject(5, beehiveId);
+        pstm.setObject(6, variety);
+        pstm.setObject(7, queenbeeId);
 
         return pstm.executeUpdate() > 0;
     }
@@ -40,6 +41,32 @@ public class QueenBeeRepo {
     }
 
     public static List<beeQueen> getAll() throws SQLException {
+        String sql = "SELECT * FROM beequeen WHERE beehiveId IS NULL ";
+
+        Connection con = DbConnection.getInstance().getConnection();
+
+        ResultSet resultSet = con.createStatement().executeQuery(sql);
+
+        List<beeQueen> beeQueenList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            beeQueenList.add(new beeQueen(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7)
+                    )
+
+            );
+        }
+        return beeQueenList;
+    }
+
+
+    public static List<beeQueen> getAll2() throws SQLException {
         String sql = "SELECT * FROM beequeen";
 
         Connection con = DbConnection.getInstance().getConnection();
@@ -52,10 +79,16 @@ public class QueenBeeRepo {
             beeQueenList.add(new beeQueen(
                     resultSet.getString(1),
                     resultSet.getString(2),
-                    resultSet.getString(3)
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7)
 
             ));
         }
         return beeQueenList;
     }
-}
+
+    }
+

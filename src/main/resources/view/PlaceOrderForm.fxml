@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="638.0" prefWidth="766.0" styleClass="backdropAnchor" stylesheets="@../css/backDrop.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PlaceOrderFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PlaceOrderFormController">
    <children>
-      <TableView fx:id="tblPlaceOrder" editable="true" layoutX="116.0" layoutY="294.0" opacity="0.88" prefHeight="269.0" prefWidth="553.0" style="-fx-background-color: #F0F3F4;">
+      <TableView fx:id="tblPlaceOrder" editable="true" layoutX="47.0" layoutY="316.0" opacity="0.88" prefHeight="304.0" prefWidth="605.0" style="-fx-background-color: #F0F3F4;">
          <columns>
             <TableColumn fx:id="colProductId" prefWidth="86.0" text="Product Id" />
-            <TableColumn fx:id="colProductName" prefWidth="100.0" text="Product Name" />
-            <TableColumn fx:id="colQty" prefWidth="81.0" text="qty" />
-            <TableColumn fx:id="colSellingPrice" prefWidth="116.0" text="Selling Price" />
-            <TableColumn fx:id="colTotal" prefWidth="93.0" text="Total" />
-            <TableColumn fx:id="colAction" prefWidth="75.0" text="Action" />
+            <TableColumn fx:id="colProductName" prefWidth="120.0" text="Product Name" />
+            <TableColumn fx:id="colQty" prefWidth="78.0" text="qty" />
+            <TableColumn fx:id="colSellingPrice" prefWidth="118.0" text="Selling Price" />
+            <TableColumn fx:id="colTotal" prefWidth="94.0" text="Total" />
+            <TableColumn fx:id="colAction" prefWidth="108.0" text="Action" />
          </columns>
       </TableView>
-      <Label layoutX="296.0" layoutY="25.0" opacity="0.94" text="PLACING ORDERS" textAlignment="JUSTIFY">
+      <Label layoutX="343.0" layoutY="25.0" opacity="0.94" text="PLACING ORDERS" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -37,116 +40,128 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Line endX="446.0" endY="-7.0" layoutX="283.0" layoutY="86.0" startX="-227.0" startY="-7.0" />
-      <ComboBox fx:id="cmbCustomerId" editable="true" layoutX="142.0" layoutY="129.0" onAction="#cmbCustomerOnAction" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #E5E7E9;" />
-      <TextField fx:id="txtOrderId" layoutX="141.0" layoutY="95.0" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #E5E7E9;">
+      <Line endX="797.0" endY="-7.0" layoutX="283.0" layoutY="86.0" startX="-227.0" startY="-7.0" />
+      <ComboBox fx:id="cmbCustomerId" editable="true" layoutX="169.0" layoutY="137.0" onAction="#cmbCustomerOnAction" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: white;" />
+      <TextField fx:id="txtQty" layoutX="687.0" layoutY="239.0" onAction="#txtQtyOnAction" prefHeight="42.0" prefWidth="103.0" style="-fx-background-color: white;">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtQty" layoutX="605.0" layoutY="207.0" onAction="#txtQtyOnAction" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: #E5E7E9;">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtOrderDate" layoutX="537.0" layoutY="94.0" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #E5E7E9;">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-      </TextField>
-      <ComboBox fx:id="cmbProductId" editable="true" layoutX="142.0" layoutY="167.0" onAction="#cmbProductOnAction" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #E5E7E9;" />
-      <TextField fx:id="txtSellingPrice" layoutX="142.0" layoutY="205.0" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: #E5E7E9;">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtQntOnHand" layoutX="380.0" layoutY="206.0" prefHeight="27.0" prefWidth="129.0" style="-fx-background-color: #E5E7E9;">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtProductName" layoutX="538.0" layoutY="169.0" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #E5E7E9;">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="txtCustomerName" layoutX="538.0" layoutY="130.0" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #E5E7E9;">
-         <font>
-            <Font name="Arial Bold" size="13.0" />
-         </font>
-      </TextField>
-      <JFXButton fx:id="btnAddToCart" layoutX="657.0" layoutY="247.0" onAction="#btnAddToCartOnAction" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #F7DC6F;" text="Add to Cart">
+      <ComboBox fx:id="cmbProductId" editable="true" layoutX="169.0" layoutY="193.0" onAction="#cmbProductOnAction" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: white;" />
+      <JFXButton fx:id="btnAddToCart" layoutX="692.0" layoutY="426.0" onAction="#btnAddToCartOnAction" prefHeight="49.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Add to Cart" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <Label layoutX="20.0" layoutY="572.0" text="Sub Total:">
+      <Label layoutX="46.0" layoutY="625.0" text="Sub Total:">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="594.0" text="Cash Received:">
+      <Label layoutX="46.0" layoutY="653.0" text="Cash Received:">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="616.0" text="Balance:">
+      <Label layoutX="47.0" layoutY="680.0" text="Balance:">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
-      <JFXButton layoutX="660.0" layoutY="593.0" onAction="#btnConfirmOrderOnAction" prefHeight="27.0" prefWidth="88.0" style="-fx-background-color: #F7DC6F;" text="Confirm">
+      <JFXButton layoutX="693.0" layoutY="517.0" onAction="#btnConfirmOrderOnAction" prefHeight="49.0" prefWidth="123.0" style="-fx-background-color: green;" text="Confirm">
          <font>
             <Font name="Calibri Bold" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <Label layoutX="54.0" layoutY="103.0" text="Order Id">
+      <Label layoutX="54.0" layoutY="103.0" text="Order Id:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="136.0" text="Customer Id">
+      <Label layoutX="53.0" layoutY="147.0" text="Customer Id:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="171.0" text="Product Id">
+      <Label layoutX="53.0" layoutY="204.0" text="Product Id:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="425.0" layoutY="103.0" text="Order Date">
+      <Label layoutX="649.0" layoutY="102.0" text="Order Date:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="425.0" layoutY="137.0" text="Customer Name">
+      <Label layoutX="647.0" layoutY="148.0" text="Customer Name:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="426.0" layoutY="174.0" text="Product Name">
+      <Label layoutX="648.0" layoutY="204.0" text="Product Name:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="208.0" text="Selling Price">
+      <Label layoutX="50.0" layoutY="252.0" prefHeight="20.0" prefWidth="106.0" text="Selling Price:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="294.0" layoutY="214.0" text="QtyOnHand">
+      <Label layoutX="350.0" layoutY="255.0" text="QtyOnHand:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="570.0" layoutY="214.0" text="Qty">
+      <Label layoutX="649.0" layoutY="253.0" text="Qty:">
          <font>
-            <Font name="Arial Bold" size="14.0" />
+            <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="lblSubTotal" layoutX="136.0" layoutY="573.0" style="-fx-background-color: #E5E7E9;" />
-      <Label fx:id="lblCashReceived" layoutX="135.0" layoutY="594.0" style="-fx-background-color: #E5E7E9;" />
-      <Label fx:id="lblBalance" layoutX="135.0" layoutY="618.0" style="-fx-background-color: #E5E7E9;" />
+      <Label fx:id="lblSubTotal" layoutX="151.0" layoutY="623.0" prefHeight="17.0" prefWidth="30.0" style="-fx-background-color: #E5E7E9;" />
+      <Label fx:id="lblBalance" layoutX="152.0" layoutY="680.0" style="-fx-background-color: #E5E7E9;" text="         " />
+      <TextField fx:id="txtCashReceived" layoutX="151.0" layoutY="647.0" onAction="#txtCashReceivedOnAction" prefHeight="17.0" prefWidth="141.0" style="-fx-background-color: #E5E7E9;" />
+      <JFXButton layoutX="275.0" layoutY="590.0" onAction="#btnMoneyReceiving" prefHeight="25.0" prefWidth="64.0" text=" " />
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="293.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-press-button-50.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblOrderId" layoutX="170.0" layoutY="102.0" prefHeight="17.0" prefWidth="199.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOderDate" layoutX="807.0" layoutY="101.0" prefHeight="17.0" prefWidth="199.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSellingPrice" layoutX="172.0" layoutY="250.0" prefHeight="17.0" prefWidth="129.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblQtyOnHand" layoutX="452.0" layoutY="253.0" prefHeight="17.0" prefWidth="129.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerName" layoutX="807.0" layoutY="146.0" prefHeight="17.0" prefWidth="199.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblProductName" layoutX="806.0" layoutY="200.0" prefHeight="17.0" prefWidth="199.0">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -15,10 +15,14 @@ public class HiveTM {
     private String Population;
     private String inspectionDate;
     private String result;
-    private String queenId;
+
 
 
     public HiveTM(String queenId, String beehiveId, String location) {
+    }
+
+
+    public HiveTM(String location) {
     }
 }
 

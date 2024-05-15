@@ -1,6 +1,4 @@
-.backdropAnchor{
-    -fx-background: linear-gradient(to bottom, #fdfdfc 0%, rgba(250, 248, 246, 0.99) 100%);
-}
-.backdrop {
-    -fx-background: linear-gradient(to bottom, #f4c506 0%, #f4ab56 100%);
+
+newColor {
+    background: linear-gradient(to bottom right, #ffff66 0%, #ff6600 100%);
 }

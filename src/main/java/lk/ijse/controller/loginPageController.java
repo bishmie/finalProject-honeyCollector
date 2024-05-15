@@ -3,13 +3,16 @@ package lk.ijse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
+import lk.ijse.util.Regex;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -24,6 +27,7 @@ public class loginPageController {
     public PasswordField txtPassword;
 
     public void btnSignInOnAction(ActionEvent actionEvent) throws IOException {
+
         String userId = txtUserId.getText();
         String pw = txtPassword.getText();
 
@@ -46,7 +50,8 @@ public class loginPageController {
             String dbPw = resultSet.getString("password");
 
             if(pw.equals(dbPw)) {
-                navigateToTheDashboard();
+                    navigateToTheDashboard();
+
             } else {
                 new Alert(Alert.AlertType.ERROR, "sorry! password is incorrect!").show();
             }
@@ -56,8 +61,13 @@ public class loginPageController {
         }
     }
 
-    private void navigateToTheDashboard() throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"));
+    private void navigateToTheDashboard()  {
+        AnchorPane rootNode = null;
+        try {
+            rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         Scene scene = new Scene(rootNode);
 
@@ -66,5 +76,24 @@ public class loginPageController {
         stage.centerOnScreen();
         stage.setTitle("Dashboard Form");
     }
+
+    public void btnSignUpOnAction( )  {
+        Parent rootNode = null;
+        try {
+            rootNode = FXMLLoader.load(this.getClass().getResource("/view/regestrationForm.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Scene scene = new Scene(rootNode);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+
+        stage.setTitle("Registration Form");
+
+        stage.show();
     }
+
+
+}
 

@@ -10,12 +10,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class QueenBeeTM {
     private String queenId;
-    private String breedingHistory;
-    private String bodyFeatures;
-    private String healthStatus;
-    private String introducedDate;
     private String variety;
+    private String breedingHistory;
 
-    public QueenBeeTM(String queenId, String breedingHistory, String variety) {
-    }
+
+
 }
