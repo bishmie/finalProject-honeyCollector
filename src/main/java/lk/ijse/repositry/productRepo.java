@@ -1,11 +1,9 @@
 package lk.ijse.repositry;
 
 import lk.ijse.db.DbConnection;
-import lk.ijse.model.Customer;
 import lk.ijse.model.OrderProduct;
 import lk.ijse.model.Product;
 
-import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class productRepo {
-    public static boolean save(Product product) throws SQLException {
+   /* public static boolean save(Product product) throws SQLException {
         String sql = "INSERT INTO product VALUES(?, ?, ?, ?, ?)";
 
         Connection connection = DbConnection.getInstance().getConnection();
@@ -28,7 +26,7 @@ public class productRepo {
 
 
         return pstm.executeUpdate() > 0;
-    }
+    }*/
 
     public static Product searchById(String id) throws SQLException {
         String sql = "SELECT * FROM product WHERE productId = ?";
@@ -44,8 +42,9 @@ public class productRepo {
             String SellingPrice = resultSet.getString(3);
             String NetWeight = resultSet.getString(4);
             String Qty = resultSet.getString(5);
+            String harvestId = resultSet.getString(6);
 
-            Product product = new Product(ProductId, ProductName, SellingPrice, NetWeight, Qty);
+            Product product = new Product(ProductId, ProductName, SellingPrice, NetWeight, Qty, harvestId);
 
             return product;
         }
@@ -53,8 +52,8 @@ public class productRepo {
         return null;
     }
 
-    public static boolean update2(String ProductId, String ProductName, String SellingPrice, String NetWeight, String Qty) throws SQLException {
-        String sql = "UPDATE product SET productName =?, sellingPrice =?,netWeight =?, qty =? WHERE productId =?";
+    public static boolean update2(String ProductId, String ProductName, String SellingPrice, String NetWeight, String Qty, String harvestId) throws SQLException {
+        String sql = "UPDATE product SET productName =?, sellingPrice =?,netWeight =?, qty =?, harvestId =? WHERE productId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -63,7 +62,8 @@ public class productRepo {
         pstm.setObject(2, SellingPrice);
         pstm.setObject(3, NetWeight);
         pstm.setObject(4, Qty);
-        pstm.setObject(5, ProductId);
+        pstm.setObject(5,harvestId);
+        pstm.setObject(6, ProductId);
 
         return pstm.executeUpdate() > 0;
     }
@@ -93,7 +93,8 @@ public class productRepo {
                     resultSet.getString(2),
                     resultSet.getString(3),
                     resultSet.getString(4),
-                    resultSet.getString(5)
+                    resultSet.getString(5),
+                    resultSet.getString(6)
 
 
             ));

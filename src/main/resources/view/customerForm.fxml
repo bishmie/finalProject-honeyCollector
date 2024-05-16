@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
+<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
    <children>
       <TableView fx:id="tblCustomerTable" editable="true" layoutX="102.0" layoutY="351.0" opacity="0.88" prefHeight="329.0" prefWidth="935.0" style="-fx-background-color: #FDFEFE;">
          <columns>
@@ -22,17 +22,17 @@
             <TableColumn fx:id="colEmail" prefWidth="229.0" text="Email" />
          </columns>
       </TableView>
-      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="CUSTOMER MANAGEMENT" textAlignment="JUSTIFY" textFill="WHITE">
+      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="CUSTOMER MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="5.0" text="Hello!">
+      <Label layoutX="18.0" layoutY="5.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="19.0" layoutY="34.0" text="Here's the overview of Customer Management." textFill="#1b1601">
+      <Label layoutX="19.0" layoutY="34.0" text="Here's the overview of Customer Management." textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -68,11 +68,6 @@
             <Font name="Arial Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="46.0" fitWidth="55.0" layoutX="685.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icon/icons8-person.gif" />
-         </image>
-      </ImageView>
       <JFXButton layoutX="406.0" layoutY="289.0" onAction="#btnSetOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: orange;" text="Set" textFill="#f8f8f5">
          <font>
             <Font name="Calibri Bold" size="14.0" />
@@ -93,27 +88,27 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXButton>
-      <Label layoutX="104.0" layoutY="125.0" text="Customer Id">
+      <Label layoutX="104.0" layoutY="125.0" text="Customer Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="445.0" layoutY="212.0" text="Email Address">
+      <Label layoutX="445.0" layoutY="212.0" text="Email Address" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="446.0" layoutY="127.0" text="Customer Name">
+      <Label layoutX="446.0" layoutY="127.0" text="Customer Name" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="101.0" layoutY="209.0" text="Contact Number">
+      <Label layoutX="101.0" layoutY="209.0" text="Contact Number" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="795.0" layoutY="128.0" text="Address">
+      <Label layoutX="795.0" layoutY="128.0" text="Address" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HiveManageController">
+<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HiveManageController">
    <children>
       <TableView fx:id="tblHive" editable="true" layoutX="30.0" layoutY="324.0" opacity="0.88" prefHeight="364.0" prefWidth="1034.0" style="-fx-background-color: #F0F3F4;">
          <columns>
@@ -24,17 +24,17 @@
             <TableColumn fx:id="colResult" prefWidth="238.0" text="Result" />
          </columns>
       </TableView>
-      <Label layoutX="346.0" layoutY="24.0" opacity="0.94" text="HIVE MANAGEMENT" textAlignment="JUSTIFY" textFill="WHITE">
+      <Label layoutX="346.0" layoutY="24.0" opacity="0.94" text="HIVE MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="4.0" text="Hello!">
+      <Label layoutX="15.0" layoutY="4.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Hive Management.">
+      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Hive Management." textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -122,32 +122,32 @@
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="30.0" layoutY="106.0" text="Hive Id">
+      <Label layoutX="30.0" layoutY="106.0" text="Hive Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="183.0" text="Population">
+      <Label layoutX="28.0" layoutY="183.0" text="Population" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="416.0" layoutY="107.0" text="Type">
+      <Label layoutX="416.0" layoutY="107.0" text="Type" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="416.0" layoutY="186.0" text="Inspection Date">
+      <Label layoutX="416.0" layoutY="186.0" text="Inspection Date" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="818.0" layoutY="107.0" text="Location">
+      <Label layoutX="818.0" layoutY="107.0" text="Location" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="818.0" layoutY="190.0" text="Inspection Result">
+      <Label layoutX="818.0" layoutY="190.0" text="Inspection Result" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

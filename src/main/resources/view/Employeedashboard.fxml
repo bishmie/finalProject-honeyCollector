@@ -28,11 +28,6 @@
                   <Font name="Calibri Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="48.0" layoutY="348.0" onAction="#btnCollectorOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" text="Collector Profile">
-               <font>
-                  <Font name="Calibri Bold" size="13.0" />
-               </font>
-            </JFXButton>
             <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="36.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/icons8-menu-50.png" />

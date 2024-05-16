@@ -5,60 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d470765-a670-4ca8-97b4-f005233f5a9c" name="Changes" comment="First commit...">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/EmailFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/EmployeeDashBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/util/Regex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/util/TextField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/ShowButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/hover.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/emailForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/collectorManageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/forgetPasswordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/collectorTM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/collectorRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/collectorManage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/forgottenPassword.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HiveManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HiveManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/InventoryFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/InventoryFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/PlaceOrderFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/ProductFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/ProductFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/QueenBeeManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/QueenBeeManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/RegestrationFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/RegestrationFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/SupplierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/SupplierFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/loginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/loginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/BeeHive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/BeeHive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/OrderProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Collector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Collector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/HiveTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/HiveTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/ProductTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/ProductTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/QueenBeeTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/QueenBeeTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/beeQueen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/beeQueen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/BeeHiveRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/BeeHiveRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/CustomerRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/InventoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/InventoryRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/OrderProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/OrderProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/OrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/QueenBeeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/QueenBeeRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/productRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/productRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/backDrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/backDrop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/Untitled design.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/icon/Untitled design.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/honeycomb-6131087_1920.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icons8-hive-50.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/icon/icons8-hive-50.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/icons8-log-out-50.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperManage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperManage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperProfie.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/HarvestDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/HarvestDetail.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PlaceOrderForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ProductForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ProductForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplierManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplierManagement.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/customerForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customerForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/emailForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/emailForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/hiveManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/hiveManagement.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/loginPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/queenBeeManage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/queenBeeManage.fxml" afterDir="false" />
@@ -193,7 +162,7 @@
       <workItem from="1715230514567" duration="5816000" />
       <workItem from="1715606989435" duration="640000" />
       <workItem from="1715607899467" duration="27363000" />
-      <workItem from="1715679866088" duration="60751000" />
+      <workItem from="1715679866088" duration="76094000" />
     </task>
     <task id="LOCAL-00001" summary="First commit...">
       <option name="closed" value="true" />
@@ -219,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715106072758</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First commit...">
+      <option name="closed" value="true" />
+      <created>1715814480000</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715814480000</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

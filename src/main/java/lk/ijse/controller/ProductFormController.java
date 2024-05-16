@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -39,14 +36,29 @@ public class ProductFormController {
     public TextField txtQty;
     public TextField txtSellingPrice;
     public TableView<ProductTM> tblProduct;
+    public ComboBox cmbHarvestId;
 
     public void initialize() {
         setCellValueFactory();
         loadAllCustomers();
+        getHarvestIds();
 
     }
 
+    private void getHarvestIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> codeList = productRepo.getCodes();
 
+            for (String code : codeList) {
+                obList.add(code);
+            }
+            cmbHarvestId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
     private void setCellValueFactory() {
@@ -93,8 +105,9 @@ public class ProductFormController {
         String SellingPrice = txtSellingPrice.getText();
         String NetWeight = txtNetWeight.getText();
         String Qty = txtQty.getText();
+        String harvestId = (String) cmbHarvestId.getValue();
 
-        String sql = "INSERT INTO product Values(?,?,?,?,?)";
+        String sql = "INSERT INTO product Values(?,?,?,?,?,?)";
 
         try {
             Connection connection = DbConnection.getInstance().getConnection();
@@ -105,6 +118,7 @@ public class ProductFormController {
             pstm.setString(3,SellingPrice);
             pstm.setString(4,NetWeight);
             pstm.setString(5,Qty);
+            pstm.setString(6,harvestId);
 
 
             boolean isSaved = pstm.executeUpdate() > 0;
@@ -122,6 +136,7 @@ public class ProductFormController {
         txtSellingPrice.setText("");
         txtNetWeight.setText("");
         txtQty.setText("");
+        cmbHarvestId.setValue(null);
     }
 
 
@@ -139,11 +154,12 @@ public class ProductFormController {
         String SellingPrice = txtSellingPrice.getText();
         String NetWeight = txtNetWeight.getText();
         String Qty = txtQty.getText();
+        String harvestId = (String) cmbHarvestId.getValue();
 
-        String sql = "UPDATE product SET productName =?, sellingPrice =?, netWeight =?, qty =? WHERE productId =?";
+        String sql = "UPDATE product SET productName =?, sellingPrice =?, netWeight =?, qty =?, harvestId =? WHERE productId =?";
 
         try {
-            boolean isUpdate = productRepo.update2(ProductId, ProductName, SellingPrice, NetWeight, Qty);
+            boolean isUpdate = productRepo.update2(ProductId, ProductName, SellingPrice, NetWeight, Qty, harvestId);
             if (isUpdate) {
                 new Alert(Alert.AlertType.INFORMATION, "Product is Updated Successfully").show();
             }else {
@@ -196,12 +212,15 @@ public class ProductFormController {
                 String SellingPrice = resultSet.getString(3);
                 String NetWeight = resultSet.getString(4);
                 String Qty = resultSet.getString(5);
+                String harvestId = resultSet.getString(6);
 
 
                 txtProductName.setText(ProductName);
                 txtSellingPrice.setText(SellingPrice);
                 txtNetWeight.setText(NetWeight);
                 txtQty.setText(Qty);
+                cmbHarvestId.setValue(harvestId);
+
             } else {
                 new Alert(Alert.AlertType.ERROR, "Product Not Found").show();
             }
@@ -236,6 +255,10 @@ public class ProductFormController {
         if (!Regex.setTextColor(lk.ijse.util.TextField.WEIGHT,txtNetWeight)) return false;
         if (!Regex.setTextColor(lk.ijse.util.TextField.QTY,txtQty)) return false;
         return true;
+    }
+
+
+    public void btnHarvestIdOnAction(ActionEvent actionEvent) {
     }
 }
 

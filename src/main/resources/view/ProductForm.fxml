@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ProductFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ProductFormController">
    <children>
       <TableView fx:id="tblProduct" editable="true" layoutX="41.0" layoutY="316.0" opacity="0.88" prefHeight="368.0" prefWidth="570.0" style="-fx-background-color: white;">
          <columns>
@@ -21,17 +22,17 @@
             <TableColumn fx:id="colQtyOnHand" prefWidth="223.0" text="qtyOnHand" />
          </columns>
       </TableView>
-      <Label layoutX="358.0" layoutY="21.0" opacity="0.94" text="PRODUCT MANAGEMENT" textAlignment="JUSTIFY" textFill="WHITE">
+      <Label layoutX="358.0" layoutY="21.0" opacity="0.94" text="PRODUCT MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="2.0" text="Hello!">
+      <Label layoutX="15.0" layoutY="2.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="17.0" layoutY="31.0" text="Here's the overview of Product Management.">
+      <Label layoutX="17.0" layoutY="31.0" text="Here's the overview of Product Management." textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -114,30 +115,36 @@
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="52.0" layoutY="107.0" text="Product Id">
+      <Label layoutX="52.0" layoutY="107.0" text="Product Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="190.0" text="Net Weight">
+      <Label layoutX="52.0" layoutY="190.0" text="Net Weight" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="434.0" layoutY="193.0" text="Quantity">
+      <Label layoutX="434.0" layoutY="193.0" text="Quantity" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="434.0" layoutY="113.0" text="Product Name">
+      <Label layoutX="434.0" layoutY="113.0" text="Product Name" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="836.0" layoutY="113.0" text="Selling Price">
+      <Label layoutX="836.0" layoutY="113.0" text="Selling Price" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
+      <Label layoutX="836.0" layoutY="197.0" text="Harvest Id" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbHarvestId" layoutX="835.0" layoutY="217.0" onAction="#btnHarvestIdOnAction" prefHeight="35.0" prefWidth="236.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>

@@ -314,11 +314,15 @@ public class DashBoardController {
         navigateToProductManage();
     }
 
-    private void navigateToProductManage() throws IOException {
+    private void navigateToProductManage() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ProductForm.fxml"));
         Parent PerenetRootNode = null;
 
-        PerenetRootNode = loader.load();
+        try {
+            PerenetRootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
         ChildRootNode.getChildren().clear();
@@ -433,5 +437,22 @@ public class DashBoardController {
     }
 
 
+    public void btnCollectorManageOnAction(ActionEvent actionEvent) {
+        navigateToCollectorManage();
+    }
 
+    private void navigateToCollectorManage() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/collectorManage.fxml"));
+        Parent PerenetRootNode = null;
+
+        try {
+            PerenetRootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        ChildRootNode.getChildren().clear();
+        ChildRootNode.getChildren().add(PerenetRootNode);
+    }
 }

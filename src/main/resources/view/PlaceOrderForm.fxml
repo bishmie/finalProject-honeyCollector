@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PlaceOrderFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PlaceOrderFormController">
    <children>
       <TableView fx:id="tblPlaceOrder" editable="true" layoutX="47.0" layoutY="316.0" opacity="0.88" prefHeight="304.0" prefWidth="605.0" style="-fx-background-color: #F0F3F4;">
          <columns>
@@ -25,17 +25,17 @@
             <TableColumn fx:id="colAction" prefWidth="108.0" text="Action" />
          </columns>
       </TableView>
-      <Label layoutX="343.0" layoutY="25.0" opacity="0.94" text="PLACING ORDERS" textAlignment="JUSTIFY" textFill="WHITE">
+      <Label layoutX="343.0" layoutY="25.0" opacity="0.94" text="PLACING ORDERS" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="5.0" text="Hello!">
+      <Label layoutX="18.0" layoutY="5.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="32.0" text="Here's the overview of Order Management." textFill="#1b1601">
+      <Label layoutX="20.0" layoutY="32.0" text="Here's the overview of Order Management." textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -79,47 +79,47 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="54.0" layoutY="103.0" text="Order Id:">
+      <Label layoutX="54.0" layoutY="103.0" text="Order Id:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="147.0" text="Customer Id:">
+      <Label layoutX="53.0" layoutY="147.0" text="Customer Id:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="53.0" layoutY="204.0" text="Product Id:">
+      <Label layoutX="53.0" layoutY="204.0" text="Product Id:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="649.0" layoutY="102.0" text="Order Date:">
+      <Label layoutX="649.0" layoutY="102.0" text="Order Date:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="647.0" layoutY="148.0" text="Customer Name:">
+      <Label layoutX="647.0" layoutY="148.0" text="Customer Name:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="648.0" layoutY="204.0" text="Product Name:">
+      <Label layoutX="648.0" layoutY="204.0" text="Product Name:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="252.0" prefHeight="20.0" prefWidth="106.0" text="Selling Price:">
+      <Label layoutX="50.0" layoutY="252.0" prefHeight="20.0" prefWidth="106.0" text="Selling Price:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="255.0" text="QtyOnHand:">
+      <Label layoutX="350.0" layoutY="255.0" text="QtyOnHand:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="649.0" layoutY="253.0" text="Qty:">
+      <Label layoutX="649.0" layoutY="253.0" text="Qty:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
@@ -133,32 +133,32 @@
             <Image url="@../icon/icons8-press-button-50.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblOrderId" layoutX="170.0" layoutY="102.0" prefHeight="17.0" prefWidth="199.0">
+      <Label fx:id="lblOrderId" layoutX="170.0" layoutY="102.0" prefHeight="17.0" prefWidth="199.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblOderDate" layoutX="807.0" layoutY="101.0" prefHeight="17.0" prefWidth="199.0">
+      <Label fx:id="lblOderDate" layoutX="807.0" layoutY="101.0" prefHeight="17.0" prefWidth="199.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblSellingPrice" layoutX="172.0" layoutY="250.0" prefHeight="17.0" prefWidth="129.0">
+      <Label fx:id="lblSellingPrice" layoutX="172.0" layoutY="250.0" prefHeight="17.0" prefWidth="129.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblQtyOnHand" layoutX="452.0" layoutY="253.0" prefHeight="17.0" prefWidth="129.0">
+      <Label fx:id="lblQtyOnHand" layoutX="452.0" layoutY="253.0" prefHeight="17.0" prefWidth="129.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblCustomerName" layoutX="807.0" layoutY="146.0" prefHeight="17.0" prefWidth="199.0">
+      <Label fx:id="lblCustomerName" layoutX="807.0" layoutY="146.0" prefHeight="17.0" prefWidth="199.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lblProductName" layoutX="806.0" layoutY="200.0" prefHeight="17.0" prefWidth="199.0">
+      <Label fx:id="lblProductName" layoutX="806.0" layoutY="200.0" prefHeight="17.0" prefWidth="199.0" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>

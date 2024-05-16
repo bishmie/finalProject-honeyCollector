@@ -9,35 +9,35 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmailFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmailFormController">
    <children>
-      <JFXButton layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #5DADE2;" text="send">
+      <JFXButton layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #5DADE2;" text=" send">
          <font>
-            <Font size="14.0" />
+            <Font name="Calibri Bold" size="16.0" />
          </font></JFXButton>
       <TextArea fx:id="txtAreaMassege" layoutX="256.0" layoutY="113.0" prefHeight="179.0" prefWidth="479.0" />
-      <Label layoutX="406.0" layoutY="24.0" opacity="0.94" text="SEND EMAILS" textAlignment="JUSTIFY" textFill="#fcf6f6">
+      <Label layoutX="406.0" layoutY="24.0" opacity="0.94" text="SEND EMAILS" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="4.0" text="Hello!">
+      <Label layoutX="15.0" layoutY="4.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
       <Line endX="728.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
-      <Label layoutX="63.0" layoutY="324.0" text="Customer Id:">
+      <Label layoutX="63.0" layoutY="324.0" text="Customer Id:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="63.0" layoutY="426.0" text="Email Address:">
+      <Label layoutX="63.0" layoutY="426.0" text="Email Address:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="61.0" layoutY="132.0" text="Enter Massege:">
+      <Label layoutX="61.0" layoutY="132.0" text="Enter Massege:" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

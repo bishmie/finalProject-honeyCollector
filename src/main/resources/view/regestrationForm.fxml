@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1390.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RegestrationFormController">
+<AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1390.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RegestrationFormController">
    <children>
       <Label layoutX="414.0" layoutY="115.0" text="Honey Collectors" textFill="#e1d7d7">
          <font>

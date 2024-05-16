@@ -11,19 +11,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.InventoryFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.InventoryFormController">
    <children>
-      <Label layoutX="358.0" layoutY="24.0" opacity="0.94" text="INVENTORY MANAGEMENT" textAlignment="JUSTIFY" textFill="#fcf6f6">
+      <Label layoutX="358.0" layoutY="24.0" opacity="0.94" text="INVENTORY MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="4.0" text="Hello!">
+      <Label layoutX="15.0" layoutY="4.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Inventory Management.">
+      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Inventory Management." textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -107,32 +107,32 @@
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="30.0" layoutY="131.0" text="Inventory Id">
+      <Label layoutX="30.0" layoutY="131.0" text="Inventory Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="223.0" text="Quantity">
+      <Label layoutX="27.0" layoutY="223.0" text="Quantity" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="405.0" layoutY="132.0" text="Type">
+      <Label layoutX="405.0" layoutY="132.0" text="Type" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="404.0" layoutY="225.0" text="Unit Price">
+      <Label layoutX="404.0" layoutY="225.0" text="Unit Price" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="803.0" layoutY="136.0" text="Description">
+      <Label layoutX="803.0" layoutY="136.0" text="Description" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="803.0" layoutY="225.0" text="Beehive Id">
+      <Label layoutX="803.0" layoutY="225.0" text="Beehive Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

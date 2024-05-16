@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1380.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashBoardController">
    <children>
-      <AnchorPane layoutX="-5.0" layoutY="-5.0" prefHeight="710.0" prefWidth="277.0" style="-fx-background-color: #2E4053;">
+      <AnchorPane layoutX="-5.0" layoutY="-5.0" prefHeight="710.0" prefWidth="277.0" style="-fx-background-color: orange;">
          <children>
             <Label layoutX="155.0" layoutY="11.0" text="CNS" textFill="#fcf5f5">
                <font>
@@ -61,7 +61,7 @@
                   <Font name="Calibri Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="59.0" layoutY="524.0" onAction="#btnOrderPlaceOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Order Management">
+            <JFXButton layoutX="57.0" layoutY="587.0" onAction="#btnOrderPlaceOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Order Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
@@ -76,6 +76,11 @@
                   <Image url="@../icon/icons8-menu-50.png" />
                </image>
             </ImageView>
+            <JFXButton layoutX="57.0" layoutY="527.0" onAction="#btnCollectorManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Collector Management">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <JFXButton layoutX="78.0" layoutY="669.0" onAction="#btnLogoutOnAction" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Logout">
@@ -85,11 +90,11 @@
       </JFXButton>
       <AnchorPane fx:id="ChildRootNode" layoutX="275.0" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053; -fx-background-radius: 0;">
          <children>
-            <Pane fx:id="paneId" layoutX="10.0" layoutY="6.0" prefHeight="68.0" prefWidth="1094.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+            <Pane fx:id="paneId" layoutX="10.0" layoutY="6.0" opacity="0.28" prefHeight="68.0" prefWidth="1094.0" style="-fx-background-color: white; -fx-background-radius: 8;">
                <children>
                   <Label layoutX="27.0" layoutY="16.0" text="Welcome to Dashboard">
                      <font>
-                        <Font name="Candara Bold" size="22.0" />
+                        <Font name="Arial Bold" size="22.0" />
                      </font>
                   </Label>
                   <Label fx:id="lblLocalDate" layoutX="773.0" layoutY="19.0" prefHeight="17.0" prefWidth="116.0" text="dwdwd">
@@ -126,7 +131,7 @@
                   </BarChart>
                </children>
             </Pane>
-            <StackPane fx:id="root" layoutX="10.0" layoutY="82.0" prefHeight="281.0" prefWidth="303.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+            <StackPane fx:id="root" layoutX="10.0" layoutY="82.0" opacity="0.28" prefHeight="281.0" prefWidth="303.0" style="-fx-background-color: white; -fx-background-radius: 8;">
                <children>
                   <Label fx:id="lblProduct" text="CNS PRODUCTS">
                      <font>
@@ -134,13 +139,13 @@
                      </font>
                   </Label>
                </children></StackPane>
-            <Label layoutX="322.0" layoutY="83.0" prefHeight="126.0" prefWidth="192.0" style="-fx-background-color: white; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="522.0" layoutY="85.0" prefHeight="120.0" prefWidth="192.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="322.0" layoutY="83.0" opacity="0.28" prefHeight="126.0" prefWidth="192.0" style="-fx-background-color: white; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="522.0" layoutY="85.0" opacity="0.28" prefHeight="120.0" prefWidth="192.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="lbltotalCus" layoutX="359.0" layoutY="117.0" text="     " textFill="#a9cce3">
+            <Label fx:id="lbltotalCus" layoutX="359.0" layoutY="117.0" text="     " textFill="ORANGE">
                <font>
                   <Font name="Arial Bold" size="38.0" />
                </font>
@@ -150,7 +155,7 @@
                   <Font name="Candara Bold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="lblTotalSup" layoutX="556.0" layoutY="118.0" text="       " textFill="#a9cce3">
+            <Label fx:id="lblTotalSup" layoutX="556.0" layoutY="118.0" text="       " textFill="ORANGE">
                <font>
                   <Font name="Arial Bold" size="38.0" />
                </font>
@@ -160,15 +165,15 @@
                   <Font name="Candara Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="323.0" layoutY="215.0" prefHeight="146.0" prefWidth="264.0" style="-fx-background-color: #D7BDE2; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="595.0" layoutY="215.0" prefHeight="146.0" prefWidth="244.0" style="-fx-background-color: #EC7063; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="724.0" layoutY="85.0" prefHeight="120.0" prefWidth="183.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="323.0" layoutY="215.0" opacity="0.28" prefHeight="146.0" prefWidth="264.0" style="-fx-background-color: #F5EEF8; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="595.0" layoutY="215.0" opacity="0.28" prefHeight="146.0" prefWidth="244.0" style="-fx-background-color: #D6EAF8; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="724.0" layoutY="85.0" opacity="0.28" prefHeight="120.0" prefWidth="183.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label layoutX="848.0" layoutY="216.0" prefHeight="146.0" prefWidth="253.0" style="-fx-background-color: #F7DC6F; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="917.0" layoutY="85.0" prefHeight="120.0" prefWidth="183.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="848.0" layoutY="216.0" opacity="0.28" prefHeight="146.0" prefWidth="253.0" style="-fx-background-color: #FEF9E7; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="917.0" layoutY="85.0" opacity="0.28" prefHeight="120.0" prefWidth="183.0" style="-fx-background-color: white; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
@@ -178,7 +183,7 @@
                   <Font name="Candara Bold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="lblTotalOrders" layoutX="747.0" layoutY="118.0" text="    " textFill="#a9cce3">
+            <Label fx:id="lblTotalOrders" layoutX="747.0" layoutY="118.0" text="    " textFill="ORANGE">
                <font>
                   <Font name="Arial Bold" size="38.0" />
                </font>
@@ -188,7 +193,7 @@
                   <Font name="Candara Bold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="lblTodayOrders" layoutX="942.0" layoutY="118.0" text="     " textFill="#a9cce3">
+            <Label fx:id="lblTodayOrders" layoutX="942.0" layoutY="118.0" text="     " textFill="ORANGE">
                <font>
                   <Font name="Arial Bold" size="38.0" />
                </font>
@@ -198,7 +203,7 @@
                   <Font name="Candara Bold" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblTotRevenue" layoutX="377.0" layoutY="280.0" prefHeight="14.0" prefWidth="177.0" textFill="#a9cce3">
+            <Label fx:id="lblTotRevenue" layoutX="377.0" layoutY="280.0" prefHeight="14.0" prefWidth="177.0" textFill="ORANGE">
                <font>
                   <Font name="Arial Bold" size="38.0" />
                </font>

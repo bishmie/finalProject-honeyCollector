@@ -13,19 +13,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #A9CCE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BeeKeeperManageController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BeeKeeperManageController">
    <children>
-      <Label layoutX="378.0" layoutY="24.0" opacity="0.94" text="BEE KEEPER MANAGEMENT" textAlignment="JUSTIFY" textFill="WHITE">
+      <Label layoutX="378.0" layoutY="24.0" opacity="0.94" text="BEE KEEPER MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="4.0" text="Hello!">
+      <Label layoutX="15.0" layoutY="4.0" text="Hello!" textFill="WHITE">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Bee Keeper Management.">
+      <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Bee Keeper Management." textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
@@ -61,7 +61,7 @@
          </font>
       </TextField>
       <Line endX="737.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
-      <Label layoutX="36.0" layoutY="364.0" text="Add New Tasks" textFill="#f2f0f0">
+      <Label layoutX="77.0" layoutY="364.0" text="Add new tasks" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
@@ -76,7 +76,7 @@
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <Label layoutX="39.0" layoutY="99.0" text="Bee Keeper Details" textFill="#f8f6f4">
+      <Label layoutX="80.0" layoutY="99.0" text="Bee Keeper Details" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
@@ -187,61 +187,71 @@
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="38.0" layoutY="137.0" text="Bee Keeper Id">
+      <Label layoutX="38.0" layoutY="137.0" text="Bee Keeper Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="138.0" text="Bee Keeper Name">
+      <Label layoutX="411.0" layoutY="138.0" text="Bee Keeper Name" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="209.0" text="Contact">
+      <Label layoutX="38.0" layoutY="209.0" text="Contact" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="412.0" layoutY="212.0" text="Email">
+      <Label layoutX="412.0" layoutY="212.0" text="Email" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="805.0" layoutY="144.0" text="Address">
+      <Label layoutX="805.0" layoutY="144.0" text="Address" textFill="ORANGE">
          <font>
             <Font name="Sitka Small Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="806.0" layoutY="214.0" text="Salary">
+      <Label layoutX="806.0" layoutY="214.0" text="Salary" textFill="ORANGE">
          <font>
             <Font name="Sitka Small Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="408.0" text="Task Id">
+      <Label layoutX="40.0" layoutY="408.0" text="Task Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="408.0" text="Task Name">
+      <Label layoutX="411.0" layoutY="408.0" text="Task Name" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="493.0" text="Due Date">
+      <Label layoutX="38.0" layoutY="493.0" text="Due Date" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="493.0" text="Bee Keeper Id">
+      <Label layoutX="411.0" layoutY="493.0" text="Bee Keeper Id" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="811.0" layoutY="411.0" text="Description">
+      <Label layoutX="811.0" layoutY="407.0" text="Description" textFill="ORANGE">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
       <TextArea fx:id="txtAreaDescription" layoutX="811.0" layoutY="431.0" onKeyReleased="#descriptionOnKeyReleased" prefHeight="135.0" prefWidth="252.0" />
+      <ImageView fitHeight="42.0" fitWidth="34.0" layoutX="35.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-add-folder-94.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="31.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-worker-beard-94.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

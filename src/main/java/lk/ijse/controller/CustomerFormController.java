@@ -29,20 +29,30 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerFormController {
-
-    public TextField txtCustomerId;
-    public TextField txtCustomerName;
-    public TextField txtCustomerAddress;
-    public TextField txtCustomerContact;
-    public TextField txtCustomerEmail;
-    public TableView<CustomerTM> tblCustomerTable;
-
-    public AnchorPane rootNode;
-    public TableColumn<?,?> colCustomerId;
-    public TableColumn<?,?> colName;
-    public TableColumn<?,?> colAddress;
-    public TableColumn<?,?> colContact;
-    public TableColumn<?,?> colEmail;
+   @FXML
+    private TextField txtCustomerId;
+   @FXML
+    private TextField txtCustomerName;
+   @FXML
+    private TextField txtCustomerAddress;
+   @FXML
+    private TextField txtCustomerContact;
+   @FXML
+    private TextField txtCustomerEmail;
+   @FXML
+    private TableView<CustomerTM> tblCustomerTable;
+@FXML
+    private AnchorPane rootNode;
+@FXML
+    private TableColumn<?,?> colCustomerId;
+@FXML
+    private TableColumn<?,?> colName;
+@FXML
+    private TableColumn<?,?> colAddress;
+@FXML
+    private TableColumn<?,?> colContact;
+@FXML
+    private TableColumn<?,?> colEmail;
 
     public void initialize() {
         setCellValueFactory();
@@ -79,8 +89,8 @@ public class CustomerFormController {
 
 
 
-
-    public void btnSetOnAction(ActionEvent actionEvent) {
+  @FXML
+     void btnSetOnAction(ActionEvent actionEvent) {
         if (!isValid()) {
             // If validation fails, show an error alert and return early
             new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
@@ -154,7 +164,8 @@ public class CustomerFormController {
             new Alert(Alert.AlertType.INFORMATION,"Customer ID Not Found!");
         }
     }
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    @FXML
+    void btnUpdateOnAction(ActionEvent actionEvent) {
 
         if (!isValid()) {
             // If validation fails, show an error alert and return early
@@ -183,7 +194,8 @@ public class CustomerFormController {
 
     }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    @FXML
+     void btnDeleteOnAction(ActionEvent actionEvent) {
         if (!isValid()) {
             // If validation fails, show an error alert and return early
             new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
@@ -201,7 +213,8 @@ public class CustomerFormController {
         }
     }
 
-    public void btnClearOnAction(ActionEvent actionEvent) {
+    @FXML
+    void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
 
     }
