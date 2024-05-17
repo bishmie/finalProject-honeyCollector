@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierFormController">
    <children>
-      <Label layoutX="333.0" layoutY="24.0" opacity="0.94" text="SUPPLIER MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="333.0" layoutY="24.0" opacity="0.94" text="SUPPLIER MANAGEMENT" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -107,32 +107,32 @@
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="36.0" layoutY="125.0" text="Supplier Id" textFill="ORANGE">
+      <Label layoutX="36.0" layoutY="125.0" text="Supplier Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="225.0" text="Contact" textFill="ORANGE">
+      <Label layoutX="36.0" layoutY="225.0" text="Contact" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="412.0" layoutY="123.0" text="Supplier Name" textFill="ORANGE">
+      <Label layoutX="412.0" layoutY="123.0" text="Supplier Name" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="415.0" layoutY="225.0" text="Email" textFill="ORANGE">
+      <Label layoutX="415.0" layoutY="225.0" text="Email" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="791.0" layoutY="127.0" text="Address" textFill="ORANGE">
+      <Label layoutX="791.0" layoutY="127.0" text="Address" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="796.0" layoutY="226.0" text="Inventory Id" textFill="ORANGE">
+      <Label layoutX="796.0" layoutY="226.0" text="Inventory Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

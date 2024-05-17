@@ -89,6 +89,7 @@ public class BeeKeeperManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     private void clearFields() {
@@ -127,6 +128,7 @@ public class BeeKeeperManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
 
     }
 
@@ -147,11 +149,10 @@ public class BeeKeeperManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+       clearFields();
     }
 
-    public void btnClearOnAction(ActionEvent actionEvent) {
-        clearFields();
-    }
+
 
     public void btnAssignTaskOnAction(ActionEvent actionEvent) {
         if (!isValidTask()) {
@@ -185,6 +186,7 @@ public class BeeKeeperManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearTaskFields();
     }
 
 
@@ -214,6 +216,7 @@ public class BeeKeeperManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearTaskFields();
 
 
     }
@@ -234,11 +237,10 @@ public class BeeKeeperManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    public void btnClearTaskOnAction(ActionEvent actionEvent) {
         clearTaskFields();
     }
+
+
 
     private void clearTaskFields() {
         txtTaskId.setText("");

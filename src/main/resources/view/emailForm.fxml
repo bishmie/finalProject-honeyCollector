@@ -9,40 +9,45 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmailFormController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmailFormController">
    <children>
-      <JFXButton layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: #5DADE2;" text=" send">
+      <JFXButton layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #2e4053;" text=" Send Email" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="16.0" />
+            <Font name="Calibri Bold" size="14.0" />
          </font></JFXButton>
       <TextArea fx:id="txtAreaMassege" layoutX="256.0" layoutY="113.0" prefHeight="179.0" prefWidth="479.0" />
-      <Label layoutX="406.0" layoutY="24.0" opacity="0.94" text="SEND EMAILS" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="406.0" layoutY="24.0" opacity="0.94" text="SEND EMAILS" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
       <Label layoutX="15.0" layoutY="4.0" text="Hello!" textFill="WHITE">
          <font>
-            <Font name="Calibri" size="30.0" />
+            <Font name="Calibri Bold" size="30.0" />
          </font>
       </Label>
       <Line endX="728.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
-      <Label layoutX="63.0" layoutY="324.0" text="Customer Id:" textFill="ORANGE">
+      <Label layoutX="63.0" layoutY="324.0" text="Customer Id:" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="63.0" layoutY="426.0" text="Email Address:" textFill="ORANGE">
+      <Label layoutX="63.0" layoutY="426.0" text="Email Address:" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="61.0" layoutY="132.0" text="Enter Massege:" textFill="ORANGE">
+      <Label layoutX="61.0" layoutY="132.0" text="Enter Massege:" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtEmail" layoutX="256.0" layoutY="422.0" prefHeight="25.0" prefWidth="333.0" />
       <ComboBox fx:id="cmbCustomerName" layoutX="256.0" layoutY="320.0" onAction="#cmbCustomerOnAction" prefHeight="25.0" prefWidth="248.0" style="-fx-background-color: white;" />
+      <Label layoutX="16.0" layoutY="34.0" text="Now you can interact with your customers" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

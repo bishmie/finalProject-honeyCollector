@@ -35,6 +35,7 @@ public class EmployeeDashBoardController {
 
     public Label lblTotalQueenBees;
     public Label lblTotalHives;
+    ;
     private int queenbeeCount;
     private int hiveCount;
 
@@ -55,7 +56,7 @@ public class EmployeeDashBoardController {
     }
 
     private void setQueenCount(int queenbeeCount) {
-        lblTotalQueenBees.setText(String.valueOf(hiveCount));
+        lblTotalQueenBees.setText(String.valueOf(queenbeeCount));
 
     }
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
+<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
    <children>
       <TableView fx:id="tblCustomerTable" editable="true" layoutX="102.0" layoutY="351.0" opacity="0.88" prefHeight="329.0" prefWidth="862.0" style="-fx-background-color: #FDFEFE;">
          <columns>
@@ -22,7 +22,7 @@
             <TableColumn fx:id="colEmail" prefWidth="188.0" text="Email" />
          </columns>
       </TableView>
-      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="CUSTOMER MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="CUSTOMER MANAGEMENT" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -37,33 +37,33 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCustomerId" layoutX="101.0" layoutY="147.0" onAction="#txtSearchOnAction" onKeyReleased="#customerIdOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Customer Id" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCustomerId" layoutX="101.0" layoutY="147.0" onAction="#txtSearchOnAction" onKeyReleased="#customerIdOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Customer Id" style="-fx-background-color: white;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerName" layoutX="444.0" layoutY="149.0" prefHeight="35.0" prefWidth="236.0" promptText="Customer Name" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCustomerName" layoutX="444.0" layoutY="149.0" prefHeight="35.0" prefWidth="236.0" promptText="Customer Name" style="-fx-background-color: white;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerAddress" layoutX="793.0" layoutY="150.0" prefHeight="35.0" prefWidth="236.0" promptText="Customer Address" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCustomerAddress" layoutX="793.0" layoutY="150.0" prefHeight="35.0" prefWidth="236.0" promptText="Customer Address" style="-fx-background-color: white;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerContact" layoutX="101.0" layoutY="231.0" onKeyReleased="#contactOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Contact Number" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCustomerContact" layoutX="101.0" layoutY="231.0" onKeyReleased="#contactOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Contact Number" style="-fx-background-color: white;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCustomerEmail" layoutX="443.0" layoutY="233.0" onKeyReleased="#emailAddressOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Email Address" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCustomerEmail" layoutX="443.0" layoutY="233.0" onKeyReleased="#emailAddressOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Email Address" style="-fx-background-color: white;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
       <Line endX="809.0" endY="-7.0" layoutX="283.0" layoutY="82.0" startX="-227.0" startY="-7.0" />
-      <JFXButton layoutX="855.0" layoutY="288.0" onAction="#btnSendEmailsOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: black;" text="Emails" textFill="#fcf7f7">
+      <JFXButton layoutX="857.0" layoutY="288.0" onAction="#btnSendEmailsOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: black;" text="Emails" textFill="#fcf7f7">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>
@@ -83,32 +83,27 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="743.0" layoutY="288.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: red;" text="Clear" textFill="#fcfbfa">
-         <font>
-            <Font name="Calibri Bold" size="14.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="104.0" layoutY="125.0" text="Customer Id" textFill="ORANGE">
+      <Label layoutX="104.0" layoutY="125.0" text="Customer Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="445.0" layoutY="212.0" text="Email Address" textFill="ORANGE">
+      <Label layoutX="445.0" layoutY="212.0" text="Email Address" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="446.0" layoutY="127.0" text="Customer Name" textFill="ORANGE">
+      <Label layoutX="446.0" layoutY="127.0" text="Customer Name" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="101.0" layoutY="209.0" text="Contact Number" textFill="ORANGE">
+      <Label layoutX="101.0" layoutY="209.0" text="Contact Number" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="795.0" layoutY="128.0" text="Address" textFill="ORANGE">
+      <Label layoutX="795.0" layoutY="128.0" text="Address" textFill="#666768">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
@@ -116,11 +111,6 @@
       <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="864.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-email-50.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="751.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icon/icons8-clear-50.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="637.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
@@ -138,6 +128,6 @@
             <Image url="@../icon/icons8-add-50.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="1009.0" layoutY="477.0" onAction="#btnPrintOnAction" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: yellow;" text="Print" />
+      <JFXButton layoutX="977.0" layoutY="290.0" onAction="#btnPrintOnAction" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #A569BD;" text="Print" textFill="WHITE" />
    </children>
 </AnchorPane>

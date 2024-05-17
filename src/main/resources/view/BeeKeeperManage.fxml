@@ -13,21 +13,21 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BeeKeeperManageController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BeeKeeperManageController">
    <children>
-      <Label layoutX="378.0" layoutY="24.0" opacity="0.94" text="BEE KEEPER MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="378.0" layoutY="24.0" opacity="0.94" text="BEE KEEPER MANAGEMENT" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
       <Label layoutX="15.0" layoutY="4.0" text="Hello!" textFill="WHITE">
          <font>
-            <Font name="Calibri" size="30.0" />
+            <Font name="Calibri Bold" size="30.0" />
          </font>
       </Label>
       <Label layoutX="16.0" layoutY="32.0" text="Here's the overview of Bee Keeper Management." textFill="WHITE">
          <font>
-            <Font size="11.0" />
+            <Font name="Arial" size="11.0" />
          </font>
       </Label>
       <TextField fx:id="txtBeeKeeperId" layoutX="38.0" layoutY="160.0" onAction="#txtSearchOnAction" onKeyReleased="#beekeeperIdOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Bee Keeper Id" style="-fx-background-color: white;">
@@ -107,14 +107,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="949.0" layoutY="306.0" onAction="#btnClearOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: red;" text="  Clear" textFill="#fcfbfa">
-         <font>
-            <Font name="Calibri Bold" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
       <JFXButton layoutX="628.0" layoutY="607.0" onAction="#btnAssignTaskOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: orange;" text="  Assign" textFill="#f8f8f5">
          <font>
             <Font name="Calibri Bold" size="14.0" />
@@ -139,24 +131,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="951.0" layoutY="606.0" onAction="#btnClearTaskOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: red;" text="  Clear" textFill="#fcfbfa">
-         <font>
-            <Font name="Calibri Bold" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="954.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icon/icons8-clear-50.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="16.0" fitWidth="21.0" layoutX="958.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icon/icons8-clear-50.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="633.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-add-50.png" />
@@ -187,57 +161,57 @@
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="38.0" layoutY="137.0" text="Bee Keeper Id" textFill="ORANGE">
+      <Label layoutX="38.0" layoutY="137.0" text="Bee Keeper Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="138.0" text="Bee Keeper Name" textFill="ORANGE">
+      <Label layoutX="411.0" layoutY="138.0" text="Bee Keeper Name" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="209.0" text="Contact" textFill="ORANGE">
+      <Label layoutX="38.0" layoutY="209.0" text="Contact" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="412.0" layoutY="212.0" text="Email" textFill="ORANGE">
+      <Label layoutX="412.0" layoutY="212.0" text="Email" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="805.0" layoutY="144.0" text="Address" textFill="ORANGE">
+      <Label layoutX="805.0" layoutY="144.0" text="Address" textFill="#2e4053">
          <font>
             <Font name="Sitka Small Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="806.0" layoutY="214.0" text="Salary" textFill="ORANGE">
+      <Label layoutX="806.0" layoutY="214.0" text="Salary" textFill="#2e4053">
          <font>
             <Font name="Sitka Small Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="408.0" text="Task Id" textFill="ORANGE">
+      <Label layoutX="40.0" layoutY="408.0" text="Task Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="408.0" text="Task Name" textFill="ORANGE">
+      <Label layoutX="411.0" layoutY="408.0" text="Task Name" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="493.0" text="Due Date" textFill="ORANGE">
+      <Label layoutX="38.0" layoutY="493.0" text="Due Date" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="493.0" text="Bee Keeper Id" textFill="ORANGE">
+      <Label layoutX="411.0" layoutY="493.0" text="Bee Keeper Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="811.0" layoutY="407.0" text="Description" textFill="ORANGE">
+      <Label layoutX="811.0" layoutY="407.0" text="Description" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

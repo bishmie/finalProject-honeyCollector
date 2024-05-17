@@ -4,67 +4,60 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1390.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.loginPageController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.loginPageController">
    <children>
-      <Label layoutX="418.0" layoutY="187.0" text="WELCOME">
+      <ImageView fitHeight="890.0" fitWidth="603.0" layoutX="797.0" layoutY="-101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/bee-7963186_1280.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="361.0" layoutY="-25.0" prefHeight="121.0" prefWidth="146.0" text="CNS" textFill="#fcf5f5">
          <font>
-            <Font name="Segoe UI Bold" size="36.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
-      <Label layoutX="442.0" layoutY="74.0" text="CNS" textFill="#fcf5f5">
-         <font>
-            <Font name="Comic Sans MS" size="58.0" />
+            <Font name="Javanese Text" size="70.0" />
          </font>
       </Label>
-      <Label layoutX="458.0" layoutY="141.0" text="Honey Collectors" textFill="#e1d7d7">
+      <Label layoutX="330.0" layoutY="97.0" text="Honey Collectors" textFill="WHITE">
          <font>
-            <Font name="Arial" size="12.0" />
+            <Font name="Arial Bold" size="26.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="358.0" layoutY="278.0" opacity="0.89" prefHeight="379.0" prefWidth="310.0" styleClass="signAnchor" stylesheets="@../css/loginboard.css">
+      <AnchorPane layoutX="243.0" layoutY="135.0" opacity="0.89" prefHeight="519.0" prefWidth="422.0" styleClass="signAnchor" stylesheets="@../css/loginboard.css">
          <children>
-            <Label layoutX="24.0" layoutY="22.0" text="User Id">
+            <Label layoutX="27.0" layoutY="129.0" text="User Id">
                <font>
                   <Font name="Calibri Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="101.0" text="Password">
+            <Label layoutX="32.0" layoutY="226.0" text="Password">
                <font>
                   <Font name="Calibri Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="156.0" layoutY="165.0" text="Forgotten Password?" />
-            <JFXButton layoutX="97.0" layoutY="204.0" onAction="#btnSignInOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #5DADE2;" text="Sign in">
+            <JFXButton layoutX="165.0" layoutY="332.0" onAction="#btnSignInOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: orange;" text="Sign in">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="txtUserId" layoutX="24.0" layoutY="46.0" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: #D0D3D4;" />
-            <PasswordField fx:id="txtPassword" layoutX="25.0" layoutY="127.0" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: #D0D3D4;" />
-            <Line endX="146.0" layoutX="124.0" layoutY="259.0" startX="-100.0" />
-            <Label layoutX="32.0" layoutY="283.0" text="Don't you have an account?" />
-            <JFXButton layoutX="194.0" layoutY="276.0" onAction="#btnSignUpOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #5DADE2;" text="Sign up">
+            <TextField fx:id="txtUserId" layoutX="29.0" layoutY="162.0" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: #D0D3D4;" />
+            <PasswordField fx:id="txtPassword" layoutX="32.0" layoutY="260.0" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: #D0D3D4;" />
+            <Line endX="269.0" layoutX="127.0" layoutY="403.0" startX="-100.0" />
+            <Label layoutX="83.0" layoutY="444.0" text="Don't you have an account?" />
+            <JFXButton layoutX="248.0" layoutY="439.0" onAction="#btnSignUpOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: orange;" text="Sign up">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
+            <Label layoutX="111.0" layoutY="51.0" text="WELCOME">
+               <font>
+                  <Font name="Segoe UI Bold" size="36.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

@@ -13,19 +13,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.QueenBeeManageController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.QueenBeeManageController">
    <children>
-      <Label layoutX="435.0" layoutY="25.0" opacity="0.94" text="QUEEN BEE MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="435.0" layoutY="25.0" opacity="0.94" text="QUEEN BEE MANAGEMENT" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="5.0" text="Hello!" textFill="WHITE">
+      <Label layoutX="18.0" layoutY="5.0" text="Hello!">
          <font>
             <Font name="Calibri" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="20.0" layoutY="32.0" text="Here's the overview of Queenbee Management." textFill="WHITE">
+      <Label layoutX="20.0" layoutY="32.0" text="Here's the overview of Queenbee Management.">
          <font>
             <Font size="11.0" />
          </font>
@@ -61,7 +61,7 @@
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <Label layoutX="117.0" layoutY="388.0" opacity="0.94" text="Already assigned queen bees" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="117.0" layoutY="388.0" opacity="0.94" text="Already assigned queen bees" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
@@ -73,7 +73,7 @@
             <TableColumn fx:id="colLocation" prefWidth="152.0" text="Location" />
         </columns>
       </TableView>
-      <Label layoutX="794.0" layoutY="389.0" opacity="0.94" text="Available queen bees" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="794.0" layoutY="389.0" opacity="0.94" text="Available queen bees" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
@@ -85,7 +85,7 @@
             <TableColumn fx:id="colAvailableBreedHis" prefWidth="165.0" text="Breeding History" />
          </columns>
       </TableView>
-      <ComboBox fx:id="cmbBeeHiveId" editable="true" layoutX="35.0" layoutY="293.0" onAction="#cmbBeeHiveIdOnAction" prefHeight="35.0" prefWidth="236.0" promptText="Bee Hive Id" style="-fx-background-color: white;" />
+      <ComboBox fx:id="cmbBeeHiveId" editable="true" layoutX="35.0" layoutY="293.0" onAction="#cmbBeeHiveIdOnAction" prefHeight="35.0" prefWidth="236.0" promptText="Bee Hive Id" style="-fx-background-color: gray;" />
       <JFXButton layoutX="662.0" layoutY="312.0" onAction="#btnSetOnAction" prefHeight="27.0" prefWidth="93.0" style="-fx-background-color: orange;" text="Set" textFill="#f8f8f5">
          <font>
             <Font name="Calibri Bold" size="14.0" />
@@ -138,37 +138,37 @@
             <Image url="@../icon/icons8-add-50.png" />
          </image>
       </ImageView>
-      <Label layoutX="34.0" layoutY="108.0" text="Queen Bee Id" textFill="ORANGE">
+      <Label layoutX="34.0" layoutY="108.0" text="Queen Bee Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="191.0" text="Health Status" textFill="ORANGE">
+      <Label layoutX="37.0" layoutY="191.0" text="Health Status" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="454.0" layoutY="107.0" text="Breeding History" textFill="ORANGE">
+      <Label layoutX="454.0" layoutY="107.0" text="Breeding History" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="458.0" layoutY="192.0" text="Introduced Date" textFill="ORANGE">
+      <Label layoutX="458.0" layoutY="192.0" text="Introduced Date" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="36.0" layoutY="270.0" text="Bee Hive Id" textFill="ORANGE">
+      <Label layoutX="36.0" layoutY="270.0" text="Bee Hive Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="832.0" layoutY="195.0" text="Variety" textFill="ORANGE">
+      <Label layoutX="832.0" layoutY="195.0" text="Variety" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="830.0" layoutY="107.0" text="Body Features" textFill="ORANGE">
+      <Label layoutX="830.0" layoutY="107.0" text="Body Features" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

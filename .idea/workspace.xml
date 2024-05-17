@@ -5,38 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d470765-a670-4ca8-97b4-f005233f5a9c" name="Changes" comment="First commit...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/TM/harvestTM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/HarvestRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/ProductReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/customerReport.jrxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/orderPlaceReport.jrxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperManageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/ProductFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/ProductFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/QueenBeeManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/QueenBeeManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/EmployeeDashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/EmployeeDashBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/RegestrationFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/RegestrationFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/collectorManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/collectorManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/loginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/loginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Harvest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/Harvest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/BeeKeeperManageRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/BeeKeeperManageRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/QueenBeeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/QueenBeeRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/collectorRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/collectorRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/util/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/util/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/util/TextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/util/TextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/HarvestDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/harvest.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperManage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperManage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/PlaceOrderForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/PlaceOrderForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/ProductForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/ProductForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/collectorManage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/collector.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SupplierManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SupplierManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/collector.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/collector.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/customerForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customerForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/emailForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/emailForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/harvest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/harvest.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/hiveManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/hiveManagement.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/loginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/loginPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/queenBeeManage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/queenBeeManage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/regestrationForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/regestrationForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +160,7 @@
       <workItem from="1715606989435" duration="640000" />
       <workItem from="1715607899467" duration="27363000" />
       <workItem from="1715679866088" duration="92116000" />
-      <workItem from="1715879472290" duration="18343000" />
+      <workItem from="1715879472290" duration="38400000" />
     </task>
     <task id="LOCAL-00001" summary="First commit...">
       <option name="closed" value="true" />
@@ -211,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715861385235</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="First commit...">
+      <option name="closed" value="true" />
+      <created>1715935081949</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715935081949</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -22,16 +22,19 @@ public class RegestrationFormController {
     public TextField txtPassword;
     public AnchorPane rootNode;
     public TextField txtUserId;
+    public TextField txtEmail;
 
 
     public void btnSignupOnAction(ActionEvent actionEvent) throws SQLException, IOException {
         String id = txtUserId.getText();
         String name = txtName.getText();
         String password = txtPassword.getText();
+        String email = txtEmail.getText();
 
-        boolean isSaved = saveUser(id, name, password);
+
+        boolean isSaved = saveUser(id, name, password,email);
         if(isSaved) {
-            new Alert(Alert.AlertType.CONFIRMATION, "user saved!").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "You are successfully saved! as a user").show();
         }
         Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"));
 
@@ -45,8 +48,8 @@ public class RegestrationFormController {
 
     }
 
-    private boolean saveUser(String id, String name, String password) throws SQLException {
-        String sql = "INSERT INTO user VALUES(?, ?, ?)";
+    private boolean saveUser(String id, String name, String password, String email) throws SQLException {
+        String sql = "INSERT INTO user VALUES(?, ?, ?,?)";
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -54,6 +57,7 @@ public class RegestrationFormController {
         pstm.setObject(1, id);
         pstm.setObject(2, name);
         pstm.setObject(3, password);
+        pstm.setObject(4, email);
 
 
         return pstm.executeUpdate() > 0;

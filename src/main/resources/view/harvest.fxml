@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HarvestDetailController">
+<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HarvestDetailController">
    <children>
       <TableView fx:id="tblHarvest" editable="true" layoutX="149.0" layoutY="386.0" opacity="0.88" prefHeight="303.0" prefWidth="824.0" style="-fx-background-color: #FDFEFE;">
          <columns>
@@ -24,7 +24,7 @@
             <TableColumn fx:id="colGrade" prefWidth="141.0" text="Grade" />
          </columns>
       </TableView>
-      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="HARVEST MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
+      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="HARVEST MANAGEMENT" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -85,27 +85,27 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXButton>
-      <Label layoutX="93.0" layoutY="102.0" text="Harvest Id" textFill="ORANGE">
+      <Label layoutX="93.0" layoutY="102.0" text="Harvest Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="178.0" text="Quality Notes" textFill="ORANGE">
+      <Label layoutX="91.0" layoutY="178.0" text="Quality Notes" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="445.0" layoutY="104.0" text="Production Date" textFill="ORANGE">
+      <Label layoutX="445.0" layoutY="104.0" text="Production Date" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="92.0" layoutY="255.0" text="Harvest Type" textFill="ORANGE">
+      <Label layoutX="92.0" layoutY="255.0" text="Harvest Type" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="795.0" layoutY="104.0" text="Amount Of qty" textFill="ORANGE">
+      <Label layoutX="795.0" layoutY="104.0" text="Amount Of qty" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
@@ -135,19 +135,19 @@
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <Label layoutX="446.0" layoutY="253.0" prefHeight="1.0" prefWidth="57.0" text="Grade" textFill="ORANGE">
+      <Label layoutX="446.0" layoutY="253.0" prefHeight="1.0" prefWidth="57.0" text="Grade" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
       <ComboBox fx:id="cmbBeehiveId" layoutX="443.0" layoutY="198.0" prefHeight="35.0" prefWidth="236.0" />
       <ComboBox fx:id="cmbCollectorId" layoutX="793.0" layoutY="198.0" prefHeight="35.0" prefWidth="236.0" />
-      <Label layoutX="443.0" layoutY="178.0" text="Beehive Id" textFill="ORANGE">
+      <Label layoutX="443.0" layoutY="178.0" text="Beehive Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="792.0" layoutY="178.0" text="Collector Id" textFill="ORANGE">
+      <Label layoutX="792.0" layoutY="178.0" text="Collector Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>

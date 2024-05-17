@@ -127,6 +127,7 @@ public class CustomerFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     private void clearFields() {
@@ -195,7 +196,7 @@ public class CustomerFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-
+ clearFields();
     }
 
     @FXML
@@ -215,13 +216,10 @@ public class CustomerFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    @FXML
-    void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
-
     }
+
+   
 
     public void btnDashBoardOnAction(ActionEvent actionEvent) throws IOException {
         navigateToDashBoard();

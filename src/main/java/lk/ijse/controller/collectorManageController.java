@@ -106,11 +106,7 @@ public class collectorManageController  {
         
     }
 
-    @FXML
-    void btnClearOnAction(ActionEvent event) {
-        clearFields();
 
-    }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
@@ -124,7 +120,7 @@ public class collectorManageController  {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-
+clearFields();
     }
 
     @FXML
@@ -159,6 +155,7 @@ public class collectorManageController  {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        clearFields();
 
     }
     private void clearFields() {
@@ -196,7 +193,7 @@ public class collectorManageController  {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-
+  clearFields();
     }
 
 
