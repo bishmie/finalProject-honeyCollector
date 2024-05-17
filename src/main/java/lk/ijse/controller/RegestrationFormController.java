@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
@@ -61,5 +62,17 @@ public class RegestrationFormController {
 
 
         return pstm.executeUpdate() > 0;
+    }
+
+    public void userIdOnKeyReleased(KeyEvent keyEvent) {
+    }
+
+    public void userNameOnKeyReleased(KeyEvent keyEvent) {
+    }
+
+    public void passwordOnKeyReleased(KeyEvent keyEvent) {
+    }
+
+    public void emailOnKeyReleased(KeyEvent keyEvent) {
     }
 }

@@ -104,10 +104,10 @@
             </JFXButton>
          </children>
       </VBox>
-      <AnchorPane fx:id="ChildRootNode" layoutX="237.0" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 0;">
+      <AnchorPane fx:id="ChildRootNode" layoutX="237.0" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: WHITE; -fx-background-radius: 0;">
          <children>
-            <Label layoutX="9.0" layoutY="57.0" opacity="0.28" prefHeight="132.0" prefWidth="218.0" style="-fx-background-color: black; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="236.0" layoutY="58.0" opacity="0.28" prefHeight="132.0" prefWidth="218.0" style="-fx-background-color: black; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="9.0" layoutY="57.0" opacity="0.89" prefHeight="132.0" prefWidth="218.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="236.0" layoutY="58.0" opacity="0.89" prefHeight="132.0" prefWidth="218.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
@@ -132,14 +132,14 @@
                   <Font name="Candara Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="9.0" layoutY="201.0" opacity="0.28" prefHeight="146.0" prefWidth="303.0" style="-fx-background-color: black; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="9.0" layoutY="201.0" opacity="0.26" prefHeight="146.0" prefWidth="303.0" style="-fx-background-color: BLACK; -fx-background-radius: 8;" text=" " />
             <Label layoutX="322.0" layoutY="201.0" opacity="0.28" prefHeight="146.0" prefWidth="303.0" style="-fx-background-color: black; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="464.0" layoutY="57.0" opacity="0.28" prefHeight="132.0" prefWidth="218.0" style="-fx-background-color: black; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="464.0" layoutY="57.0" opacity="0.89" prefHeight="132.0" prefWidth="218.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label layoutX="694.0" layoutY="57.0" opacity="0.28" prefHeight="132.0" prefWidth="227.0" style="-fx-background-color: black; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="694.0" layoutY="57.0" opacity="0.89" prefHeight="132.0" prefWidth="227.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
@@ -226,22 +226,22 @@
             </ImageView>
             <AnchorPane layoutY="-4.0" prefHeight="51.0" prefWidth="1169.0" style="-fx-background-color: #2E4053;">
                <children>
-                  <Label fx:id="lblLocalDate" layoutX="837.0" layoutY="19.0" prefHeight="17.0" prefWidth="116.0" text="dwdwd" textFill="WHITE">
+                  <Label fx:id="lblLocalDate" layoutX="920.0" layoutY="19.0" prefHeight="17.0" prefWidth="116.0" text="dwdwd" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblSetTime" layoutX="972.0" layoutY="17.0" text="sqsq" textFill="WHITE">
+                  <Label fx:id="lblSetTime" layoutX="1065.0" layoutY="17.0" text="sqsq" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="16.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="810.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="896.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icon/icons8-date-50.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="942.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="1038.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icon/icons8-clock-50.png" />
                      </image>
@@ -253,7 +253,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="928.0" layoutY="56.0" opacity="0.28" prefHeight="132.0" prefWidth="227.0" style="-fx-background-color: black; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="928.0" layoutY="56.0" opacity="0.89" prefHeight="132.0" prefWidth="227.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>

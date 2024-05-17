@@ -3,15 +3,18 @@ package lk.ijse.controller;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.db.DbConnection;
@@ -26,6 +29,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class EmployeeDashBoardController {
+
     public AnchorPane rootNode;
     public AnchorPane ChildRootNode;
     public Pane paneId;
@@ -35,6 +39,9 @@ public class EmployeeDashBoardController {
 
     public Label lblTotalQueenBees;
     public Label lblTotalHives;
+    public Label lblMenu;
+    public ImageView lblMenuBack;
+    public VBox slider;
     ;
     private int queenbeeCount;
     private int hiveCount;
@@ -44,6 +51,35 @@ public class EmployeeDashBoardController {
         setLocalTime();
         totalHives();
         totalQueenBees();
+        initializer();
+    }
+    public void initializer(){
+        slider.setTranslateX(-176);
+
+        lblMenu.setOnMouseClicked(event ->{
+            TranslateTransition slide = new TranslateTransition();
+            slide.setDuration(Duration.seconds(0.4));
+            slide.setNode(slider);
+            slide.setToX(0);
+            slide.play();
+            slider.setTranslateX(-176);
+            slide.setOnFinished((ActionEvent e) ->{
+                lblMenu.setVisible(false);
+                lblMenuBack.setVisible(true);
+            });
+        });
+        lblMenuBack.setOnMouseClicked(event ->{
+            TranslateTransition slide = new TranslateTransition();
+            slide.setDuration(Duration.seconds(0.4));
+            slide.setNode(slider);
+            slide.setToX(0);
+            slide.play();
+            slider.setTranslateX(-176);
+            slide.setOnFinished((ActionEvent e) ->{
+                lblMenu.setVisible(true);
+                lblMenuBack.setVisible(false);
+            });
+        });
     }
 
     private void totalQueenBees() {
@@ -203,5 +239,22 @@ public class EmployeeDashBoardController {
     }
 
     public void btnHarvestManagementOnAction(ActionEvent actionEvent) {
+        navigateToHarvestManage();
+    }
+
+    private void navigateToHarvestManage() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/harvest.fxml"));
+        Parent PerenetRootNode = null;
+
+        try {
+            PerenetRootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        ChildRootNode.getChildren().clear();
+        ChildRootNode.getChildren().add(PerenetRootNode);
+
     }
 }

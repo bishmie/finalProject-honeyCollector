@@ -1,0 +1,4 @@
+.button:hover {
+
+    -fx-animated: #566573;/* Text color on hover */
+}

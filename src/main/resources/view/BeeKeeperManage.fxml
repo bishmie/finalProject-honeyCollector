@@ -83,7 +83,7 @@
       </Label>
       <DatePicker fx:id="dpDueDate" layoutX="36.0" layoutY="515.0" prefHeight="35.0" prefWidth="236.0" style="-fx-background-color: #FDFEFE;" />
       <ComboBox fx:id="cmbBeeKeeperId" editable="true" layoutX="411.0" layoutY="516.0" prefHeight="35.0" prefWidth="236.0" promptText="Bee Keeper Id" style="-fx-background-color: #FDFEFE;" visibleRowCount="5" />
-      <JFXButton layoutX="624.0" layoutY="306.0" onAction="#btnSetOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: orange;" text="Set" textFill="#f8f8f5">
+      <JFXButton buttonType="RAISED" layoutX="693.0" layoutY="307.0" onAction="#btnSetOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: GREEN;" text="SAVE" textFill="#f8f8f5">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -91,7 +91,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="734.0" layoutY="306.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: green;" text="   Update" textFill="#fffefa">
+      <JFXButton buttonType="RAISED" layoutX="815.0" layoutY="306.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: BROWN;" text="  UPDATE" textFill="#fffefa">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -99,7 +99,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="843.0" layoutY="306.0" onAction="#btnDeleteOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: blue;" text="  Delete" textFill="#f8f8f6">
+      <JFXButton buttonType="RAISED" layoutX="937.0" layoutY="306.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: RED;" text="  DELETE" textFill="#f8f8f6">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -107,7 +107,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="628.0" layoutY="607.0" onAction="#btnAssignTaskOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: orange;" text="  Assign" textFill="#f8f8f5">
+      <JFXButton buttonType="RAISED" layoutX="704.0" layoutY="604.0" onAction="#btnAssignTaskOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: GREEN;" text=" ASSIGN" textFill="#f8f8f5">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -115,7 +115,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="738.0" layoutY="606.0" onAction="#btnUpdateTaskOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: green;" text="   Update" textFill="#fffefa">
+      <JFXButton buttonType="RAISED" layoutX="823.0" layoutY="604.0" onAction="#btnUpdateTaskOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: BROWN;" text="  UPDATE" textFill="#fffefa">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -123,7 +123,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="846.0" layoutY="606.0" onAction="#btnDeleteTaskOnAction" prefHeight="27.0" prefWidth="96.0" style="-fx-background-color: blue;" text="Delete" textFill="#f8f8f6">
+      <JFXButton buttonType="RAISED" layoutX="942.0" layoutY="604.0" onAction="#btnDeleteTaskOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: RED;" text="DELETE" textFill="#f8f8f6">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -131,32 +131,27 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="633.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="705.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icon/icons8-add-50.png" />
+            <Image url="@../icon/icons8-download-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="738.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="823.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-update-24.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="27.0" layoutX="848.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="21.0" fitWidth="27.0" layoutX="944.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="634.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icon/icons8-add-50.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="743.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="834.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-update-24.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="849.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="948.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
@@ -216,7 +211,7 @@
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtAreaDescription" layoutX="811.0" layoutY="431.0" onKeyReleased="#descriptionOnKeyReleased" prefHeight="135.0" prefWidth="252.0" />
+      <TextArea fx:id="txtAreaDescription" layoutX="798.0" layoutY="434.0" onKeyReleased="#descriptionOnKeyReleased" prefHeight="135.0" prefWidth="252.0" />
       <ImageView fitHeight="42.0" fitWidth="34.0" layoutX="35.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-add-folder-94.png" />
@@ -225,6 +220,11 @@
       <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="31.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-worker-beard-94.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="21.0" layoutX="713.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-download-50.png" />
          </image>
       </ImageView>
    </children>

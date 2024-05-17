@@ -132,6 +132,7 @@ public class ProductFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     private void clearFields() {
@@ -172,6 +173,7 @@ public class ProductFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
 
     }
 
@@ -193,11 +195,10 @@ public class ProductFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    public void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
     }
+
+
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
         String id = txtProductId.getText();

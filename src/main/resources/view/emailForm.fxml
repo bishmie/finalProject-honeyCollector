@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmailFormController">
    <children>
-      <JFXButton layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #2e4053;" text=" Send Email" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #2e4053;" text=" Send Email" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></JFXButton>

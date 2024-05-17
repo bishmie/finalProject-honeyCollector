@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d470765-a670-4ca8-97b4-f005233f5a9c" name="Changes" comment="First commit...">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/BeeKeeperManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/EmployeeDashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/EmployeeDashBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/RegestrationFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/RegestrationFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/collectorManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/collectorManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/InventoryFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/InventoryFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/ProductFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/ProductFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/QueenBeeManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/QueenBeeManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/SupplierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/SupplierFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperManage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/BeeKeeperManage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/Employeedashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" afterDir="false" />
@@ -160,7 +160,7 @@
       <workItem from="1715606989435" duration="640000" />
       <workItem from="1715607899467" duration="27363000" />
       <workItem from="1715679866088" duration="92116000" />
-      <workItem from="1715879472290" duration="38400000" />
+      <workItem from="1715879472290" duration="43581000" />
     </task>
     <task id="LOCAL-00001" summary="First commit...">
       <option name="closed" value="true" />
@@ -210,7 +210,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715935081949</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="First commit...">
+      <option name="closed" value="true" />
+      <created>1715974373725</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715974373725</updated>
+    </task>
+    <task id="LOCAL-00008" summary="First commit...">
+      <option name="closed" value="true" />
+      <created>1715974638741</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715974638741</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

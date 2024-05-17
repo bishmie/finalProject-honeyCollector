@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="700.0" prefWidth="1380.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmployeeDashBoardController">
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1380.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmployeeDashBoardController">
    <children>
-      <AnchorPane fx:id="ChildRootNode" layoutX="291.0" prefHeight="728.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 0;">
+      <AnchorPane fx:id="ChildRootNode" layoutX="291.0" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: WHITE; -fx-background-radius: 0;">
          <children>
             <Pane fx:id="paneId" layoutX="-291.0" prefHeight="60.0" prefWidth="1423.0" style="-fx-background-color: #2E4053; -fx-background-radius: o;">
                <children>
@@ -22,13 +22,13 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="541.0" layoutY="82.0" opacity="0.26" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: black; -fx-background-radius: 8;" text=" " />
-            <Label layoutX="11.0" layoutY="80.0" opacity="0.26" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: black; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="541.0" layoutY="70.0" opacity="0.89" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="11.0" layoutY="72.0" opacity="0.89" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label layoutX="275.0" layoutY="81.0" opacity="0.26" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: black; -fx-background-radius: 10;" text=" ">
+            <Label layoutX="275.0" layoutY="71.0" opacity="0.89" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 10;" text=" ">
                <font>
                   <Font size="36.0" />
                </font>
@@ -83,10 +83,10 @@
                   <Image url="@../icon/icons8-date-50.png" />
                </image>
             </ImageView>
-            <Label layoutX="809.0" layoutY="83.0" opacity="0.26" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: black; -fx-background-radius: 8;" text=" " />
+            <Label layoutX="807.0" layoutY="69.0" opacity="0.89" prefHeight="143.0" prefWidth="252.0" style="-fx-background-color: #F4D03F; -fx-background-radius: 8;" text=" " />
          </children>
       </AnchorPane>
-      <VBox layoutX="38.0" layoutY="193.0" prefHeight="298.0" prefWidth="206.0" style="-fx-background-color: #2E4053;">
+      <VBox fx:id="slider" layoutX="38.0" layoutY="193.0" prefHeight="298.0" prefWidth="206.0" style="-fx-background-color: #2E4053;">
          <children>
             <JFXButton onAction="#btnHarvestManagementOnAction" prefHeight="43.0" prefWidth="206.0" style="-fx-background-color: #2E4053;" text="Harvest Management" textFill="WHITE">
                <font>
@@ -115,12 +115,12 @@
             </JFXButton>
          </children>
       </VBox>
-      <Label layoutX="68.0" layoutY="62.0" text="  MENU" textFill="WHITE">
+      <Label fx:id="lblMenu" layoutX="68.0" layoutY="62.0" text="  MENU" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="29.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="lblMenuBack" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/icons8-menu-50.png" />
                </image>

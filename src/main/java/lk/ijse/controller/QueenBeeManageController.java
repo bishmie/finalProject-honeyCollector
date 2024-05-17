@@ -48,8 +48,7 @@ public class QueenBeeManageController {
 
     public void initialize() {
         getHiveIds();
-        setCellValueFactory();
-       // loadAllAssignedQueenBees();
+
         setCellValueFactory2();
        loadAllAvailabledQueenBees();
 
@@ -75,12 +74,7 @@ public class QueenBeeManageController {
         }
     }*/
 
-    private void setCellValueFactory() {
-        colQueenBeeId.setCellValueFactory(new PropertyValueFactory<>("queenBeeId"));
-        colBeeHiveId.setCellValueFactory(new PropertyValueFactory<>("beeHiveId"));
-        colLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
 
-    }
 
     private void getHiveIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
@@ -171,6 +165,7 @@ public class QueenBeeManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     private void clearFields() {
@@ -213,6 +208,7 @@ public class QueenBeeManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
 
     }
 
@@ -227,11 +223,10 @@ public class QueenBeeManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    public void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
     }
+
+
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
         String id = txtQueenId.getText();

@@ -90,6 +90,7 @@ public class InventoryFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     private void clearFields() {
@@ -127,6 +128,7 @@ public class InventoryFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
 
     }
 
@@ -146,11 +148,10 @@ public class InventoryFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    public void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
     }
+
+
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
         String id = txtInventoryId.getText();

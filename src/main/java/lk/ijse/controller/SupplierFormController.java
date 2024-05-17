@@ -85,6 +85,7 @@ public class SupplierFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.INFORMATION,"supplier ID Not Found!");
         }
+
     }
 
 
@@ -123,6 +124,7 @@ public class SupplierFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearSupplierFields();
     }
         private void clearSupplierFields() {
             txtSupplierId.setText("");
@@ -160,6 +162,7 @@ public class SupplierFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearSupplierFields();
 
     }
 
@@ -174,11 +177,10 @@ public class SupplierFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    public void btnClearSupplierOnAction(ActionEvent actionEvent) {
         clearSupplierFields();
     }
+
+
 
     public void supplierOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.util.TextField.SID, txtSupplierId);
