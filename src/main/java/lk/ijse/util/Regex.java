@@ -67,6 +67,18 @@ public class Regex {
             case QID:
                 filed = "^Q\\d{3,}$";
                 break;
+            case HCID:
+                filed = "^HC\\d{3,}$";
+                break;
+            case HAID:
+                filed = "^HA\\d{3,}$";
+                break;
+            case  AMOUNT:
+                filed = "^\\d+(\\.\\d+)?\\s?(ml|l)$";
+                break;
+            case GRADE:
+                filed ="^[ABC]$";
+                break;
 
 
         }

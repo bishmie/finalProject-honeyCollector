@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.model.Collector;
 import lk.ijse.model.TM.collectorTM;
 import lk.ijse.repositry.collectorRepo;
+import lk.ijse.util.Regex;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -133,6 +134,13 @@ public class collectorManageController  {
 
     @FXML
     void btnSetOnAction(ActionEvent event) {
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String id = txtCollectorId.getText();
         String name = txtCollectorName.getText();
         String address = txtAddress.getText();
@@ -164,6 +172,13 @@ public class collectorManageController  {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
+
         String id = txtCollectorId.getText();
         String name = txtCollectorName.getText();
         String address = txtAddress.getText();
@@ -184,20 +199,9 @@ public class collectorManageController  {
 
     }
 
-    @FXML
-    void contactOnKeyReleased(KeyEvent event) {
 
-    }
 
-    @FXML
-    void customerIdOnKeyReleased(KeyEvent event) {
 
-    }
-
-    @FXML
-    void emailAddressOnKeyReleased(KeyEvent event) {
-
-    }
 
     @FXML
     void txtSearchOnAction(ActionEvent event) throws SQLException {
@@ -219,4 +223,35 @@ public class collectorManageController  {
 
     }
 
+    public void collectorIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.HCID, txtCollectorId);
+    }
+
+    public void customerNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME, txtCollectorName);
+    }
+
+    public void addressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.ADDRESS, txtAddress);
+    }
+
+    public void emailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL, txtEmail);
+    }
+
+    public void salaryOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtSlry);
+    }
+   public void contactOnKeyReleased(KeyEvent event) {
+       Regex.setTextColor(lk.ijse.util.TextField.CONTACT, txtContact);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.HCID,txtCollectorId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.NAME,txtCollectorName)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.ADDRESS,txtAddress)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.EMAIL,txtEmail)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.PRICE, txtSlry)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.CONTACT,txtContact)) return false;
+        return true;
+    }
 }

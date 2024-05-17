@@ -1,7 +1,6 @@
 package lk.ijse.controller;
 
 
-import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
-import lk.ijse.repositry.productRepo;
-
-
 
 
 import java.io.IOException;
@@ -28,34 +24,13 @@ import java.time.LocalDate;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
-import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import javafx.util.Duration;
-import lk.ijse.model.Product;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.util.Duration;
-import java.util.List;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 
 public class DashBoardController {
@@ -308,7 +283,24 @@ public class DashBoardController {
     }
 
     public void btnHarvestManageOnAction(ActionEvent actionEvent) {
+        navigateToHarvestManagement();
     }
+
+    private void navigateToHarvestManagement() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/harvest.fxml"));
+        Parent PerenetRootNode = null;
+
+        try {
+            PerenetRootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        ChildRootNode.getChildren().clear();
+        ChildRootNode.getChildren().add(PerenetRootNode);
+    }
+
 
     public void btnProductManageOnAction(ActionEvent actionEvent) throws IOException {
         navigateToProductManage();
@@ -442,7 +434,7 @@ public class DashBoardController {
     }
 
     private void navigateToCollectorManage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/collectorManage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/collector.fxml"));
         Parent PerenetRootNode = null;
 
         try {

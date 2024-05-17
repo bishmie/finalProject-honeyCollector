@@ -48,10 +48,37 @@ public class QueenBeeManageController {
 
     public void initialize() {
         getHiveIds();
-        //setCellValueFactory();
-        //loadAllAssignedQueenBees();
+        setCellValueFactory();
+       // loadAllAssignedQueenBees();
         setCellValueFactory2();
        loadAllAvailabledQueenBees();
+
+    }
+
+   /* private void loadAllAssignedQueenBees() {
+        ObservableList<QueenBeeTM> obList = FXCollections.observableArrayList();
+
+        try {
+            List<beeQueen> beeQueenList = QueenBeeRepo.getAllAssignedBees();
+            for (beeQueen bq : beeQueenList) {
+                QueenBeeTM tm = new QueenBeeTM(
+                        bq.getQueenId(),
+                        bq.getBeehiveId(),
+                        bq.get()
+
+                );
+                obList.add(tm);
+            }
+            tblAvailableQueenBees.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+
+    private void setCellValueFactory() {
+        colQueenBeeId.setCellValueFactory(new PropertyValueFactory<>("queenBeeId"));
+        colBeeHiveId.setCellValueFactory(new PropertyValueFactory<>("beeHiveId"));
+        colLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
 
     }
 
@@ -83,7 +110,7 @@ public class QueenBeeManageController {
         colAvailableQueenId.setCellValueFactory(new PropertyValueFactory<>("queenId"));
         colAvailableVariety.setCellValueFactory(new PropertyValueFactory<>("variety"));
         colAvailableBreedHis.setCellValueFactory(new PropertyValueFactory<>("breedingHistory"));
-        System.out.println("hi");
+
     }
      private void loadAllAvailabledQueenBees() {
          ObservableList<QueenBeeTM> obList = FXCollections.observableArrayList();

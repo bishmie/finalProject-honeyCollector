@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -26,60 +27,90 @@
                   <Font name="Arial" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="56.0" layoutY="75.0" onAction="#btnHiveManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Hive Management">
+            <JFXButton buttonType="RAISED" layoutX="56.0" layoutY="75.0" onAction="#btnHiveManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Hive Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="56.0" layoutY="131.0" onAction="#btnQueenBeeOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="      QueenBee Management">
+            <JFXButton buttonType="RAISED" layoutX="56.0" layoutY="131.0" onAction="#btnQueenBeeOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="      QueenBee Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="56.0" layoutY="186.0" onAction="#btnHarvestManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="     Harvest Management">
+            <JFXButton buttonType="RAISED" layoutX="56.0" layoutY="186.0" onAction="#btnHarvestManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="     Harvest Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="56.0" layoutY="242.0" onAction="#btnProductManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="      Product Management">
+            <JFXButton buttonType="RAISED" layoutX="56.0" layoutY="242.0" onAction="#btnProductManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="      Product Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="56.0" layoutY="296.0" onAction="#btnInventoryManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="         Inventory Management">
+            <JFXButton buttonType="RAISED" layoutX="56.0" layoutY="296.0" onAction="#btnInventoryManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="         Inventory Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="58.0" layoutY="466.0" onAction="#btnEmployeeManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="     BeeKeeper Management">
+            <JFXButton buttonType="RAISED" layoutX="58.0" layoutY="466.0" onAction="#btnEmployeeManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="     BeeKeeper Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="57.0" layoutY="349.0" onAction="#btnCustomerManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="        Customer Management">
+            <JFXButton buttonType="RAISED" layoutX="57.0" layoutY="349.0" onAction="#btnCustomerManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="        Customer Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="57.0" layoutY="587.0" onAction="#btnOrderPlaceOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Order Management">
+            <JFXButton buttonType="RAISED" layoutX="57.0" layoutY="587.0" onAction="#btnOrderPlaceOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Order Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
-            <JFXButton layoutX="58.0" layoutY="408.0" onAction="#btnSupplierManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="       Supplier Management">
+            <JFXButton buttonType="RAISED" layoutX="58.0" layoutY="408.0" onAction="#btnSupplierManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="       Supplier Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
             <ImageView fitHeight="51.0" fitWidth="37.0" layoutX="36.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/icons8-menu-50.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="57.0" layoutY="527.0" onAction="#btnCollectorManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Collector Management">
+            <JFXButton buttonType="RAISED" layoutX="57.0" layoutY="527.0" onAction="#btnCollectorManageOnAction" prefHeight="43.0" prefWidth="183.0" style="-fx-background-color: white;" styleClass="hover" stylesheets="@../css/hover.css" text="Collector Management">
                <font>
                   <Font name="Calibri Bold" size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
          </children>
       </AnchorPane>
@@ -87,6 +118,9 @@
          <font>
             <Font name="Calibri Bold" size="13.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
       </JFXButton>
       <AnchorPane fx:id="ChildRootNode" layoutX="275.0" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053; -fx-background-radius: 0;">
          <children>

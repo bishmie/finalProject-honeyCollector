@@ -10,19 +10,26 @@ import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.db.DbConnection;
 import lk.ijse.model.*;
 import lk.ijse.model.TM.CartTM;
 import lk.ijse.repositry.CustomerRepo;
 import lk.ijse.repositry.PlaceOrderRepo;
 import lk.ijse.repositry.productRepo;
 import lk.ijse.repositry.OrderRepo;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.engine.*;
 
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class PlaceOrderFormController {
 
@@ -284,4 +291,23 @@ public class PlaceOrderFormController {
         calculateBalance();
 
     }
-}
+
+    public void btnPrintBillOnAction(ActionEvent actionEvent) throws JRException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/report/orderPlaceReport.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("orderId", lblOrderId.getText());
+
+        JasperPrint jasperPrint =
+                null;
+        try {
+            jasperPrint = JasperFillManager.fillReport(jasperReport, data, DbConnection.getInstance().getConnection());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        JasperViewer.viewReport(jasperPrint, false);
+    }
+
+    }
+

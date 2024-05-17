@@ -20,6 +20,10 @@ import lk.ijse.model.Customer;
 import lk.ijse.model.TM.CustomerTM;
 import lk.ijse.repositry.CustomerRepo;
 import lk.ijse.util.Regex;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -284,5 +288,14 @@ public class CustomerFormController {
         if (!Regex.setTextColor(lk.ijse.util.TextField.EMAIL,txtCustomerEmail)) return false;
         if (!Regex.setTextColor(lk.ijse.util.TextField.CONTACT,txtCustomerContact)) return false;
         return true;
+    }
+
+    public void btnPrintOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/reports/customerReport.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DbConnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint,false);
+
     }
 }

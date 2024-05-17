@@ -17,6 +17,10 @@ import lk.ijse.repositry.CustomerRepo;
 import lk.ijse.repositry.QueenBeeRepo;
 import lk.ijse.repositry.productRepo;
 import lk.ijse.util.Regex;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -259,6 +263,15 @@ public class ProductFormController {
 
 
     public void btnHarvestIdOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnPrintOnAction(ActionEvent actionEvent) throws JRException, SQLException {
+        JasperDesign jasperDesign = JRXmlLoader.load("src/main/resources/reports/ProductReport.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DbConnection.getInstance().getConnection());
+        JasperViewer.viewReport(jasperPrint,false);
     }
 }
 

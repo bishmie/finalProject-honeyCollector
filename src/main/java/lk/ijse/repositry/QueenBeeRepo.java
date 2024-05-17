@@ -66,8 +66,10 @@ public class QueenBeeRepo {
     }
 
 
-    public static List<beeQueen> getAll2() throws SQLException {
-        String sql = "SELECT * FROM beequeen";
+
+
+    public static List<beeQueen> getAllAssignedBees() throws SQLException {
+        String sql = "SELECT beequeen.queenId, beequeen.FROM beequeen WHERE beehiveId IS NOT NULL ";
 
         Connection con = DbConnection.getInstance().getConnection();
 
@@ -77,18 +79,18 @@ public class QueenBeeRepo {
 
         while (resultSet.next()) {
             beeQueenList.add(new beeQueen(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4),
-                    resultSet.getString(5),
-                    resultSet.getString(6),
-                    resultSet.getString(7)
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getString(4),
+                            resultSet.getString(5),
+                            resultSet.getString(6),
+                            resultSet.getString(7)
+                    )
 
-            ));
+            );
         }
         return beeQueenList;
     }
-
-    }
+}
 

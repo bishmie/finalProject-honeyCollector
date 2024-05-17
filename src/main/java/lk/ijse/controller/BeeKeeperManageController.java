@@ -9,7 +9,6 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.db.DbConnection;
 import lk.ijse.repositry.BeeHiveRepo;
 import lk.ijse.repositry.BeeKeeperManageRepo;
-import lk.ijse.repositry.CustomerRepo;
 import lk.ijse.repositry.TaskRepo;
 import lk.ijse.util.Regex;
 
@@ -36,15 +35,15 @@ public class BeeKeeperManageController {
     public TextField txtDescription;
 
     public void initialize(){
-        getBeehiveId();
+        getBeeKeeperId();
 
     }
 
-    private void getBeehiveId() {
+    private void getBeeKeeperId() {
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
-            List<String> idList = BeeHiveRepo.getIds();
+            List<String> idList = BeeKeeperManageRepo.getIds();
 
             for(String id : idList) {
                 obList.add(id);
@@ -245,8 +244,8 @@ public class BeeKeeperManageController {
         txtTaskId.setText("");
         txtTaskName.setText("");
         txtAreaDescription.setText("");
-        dpDueDate.setValue(LocalDate.parse(" "));
-        cmbBeeKeeperId.setValue("");
+        dpDueDate.setValue(null);
+        cmbBeeKeeperId.setValue(null);
 
     }
 

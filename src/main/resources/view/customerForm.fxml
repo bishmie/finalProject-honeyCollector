@@ -13,13 +13,13 @@
 
 <AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
    <children>
-      <TableView fx:id="tblCustomerTable" editable="true" layoutX="102.0" layoutY="351.0" opacity="0.88" prefHeight="329.0" prefWidth="935.0" style="-fx-background-color: #FDFEFE;">
+      <TableView fx:id="tblCustomerTable" editable="true" layoutX="102.0" layoutY="351.0" opacity="0.88" prefHeight="329.0" prefWidth="862.0" style="-fx-background-color: #FDFEFE;">
          <columns>
             <TableColumn fx:id="colCustomerId" prefWidth="141.0" text="CustomerId" />
             <TableColumn fx:id="colName" prefWidth="189.0" text="Name" />
             <TableColumn fx:id="colAddress" prefWidth="195.0" text="Address" />
-            <TableColumn fx:id="colContact" prefWidth="180.0" text="Contact" />
-            <TableColumn fx:id="colEmail" prefWidth="229.0" text="Email" />
+            <TableColumn fx:id="colContact" prefWidth="147.0" text="Contact" />
+            <TableColumn fx:id="colEmail" prefWidth="188.0" text="Email" />
          </columns>
       </TableView>
       <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="CUSTOMER MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
@@ -138,5 +138,6 @@
             <Image url="@../icon/icons8-add-50.png" />
          </image>
       </ImageView>
+      <JFXButton layoutX="1009.0" layoutY="477.0" onAction="#btnPrintOnAction" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: yellow;" text="Print" />
    </children>
 </AnchorPane>

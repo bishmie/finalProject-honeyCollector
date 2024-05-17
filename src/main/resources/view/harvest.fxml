@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNode" opacity="0.99" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #2E4053;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HarvestDetailController">
+   <children>
+      <TableView fx:id="tblHarvest" editable="true" layoutX="149.0" layoutY="386.0" opacity="0.88" prefHeight="303.0" prefWidth="824.0" style="-fx-background-color: #FDFEFE;">
+         <columns>
+            <TableColumn fx:id="colHarvestId" prefWidth="108.0" text="Harvest Id" />
+            <TableColumn fx:id="colProductionDate" prefWidth="146.0" text="Production Date" />
+            <TableColumn fx:id="colAmount" prefWidth="131.0" text="Amount Of qty" />
+            <TableColumn fx:id="colQualityNote" prefWidth="147.0" text="Quality Notes" />
+            <TableColumn fx:id="colHarvestType" prefWidth="150.0" text="Harvest Type" />
+            <TableColumn fx:id="colGrade" prefWidth="141.0" text="Grade" />
+         </columns>
+      </TableView>
+      <Label layoutX="360.0" layoutY="25.0" opacity="0.94" text="HARVEST MANAGEMENT" textAlignment="JUSTIFY" textFill="ORANGE">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="5.0" text="Hello!" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="34.0" text="Here's the overview of  Harvest Management." textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtHarvestId" layoutX="91.0" layoutY="122.0" onAction="#txtSearchOnAction" onKeyReleased="#harvestIdOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Harvest Id" style="-fx-background-color: #FDFEFE;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtProductionDate" layoutX="444.0" layoutY="123.0" onKeyReleased="#productionDateOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Production Date" style="-fx-background-color: #FDFEFE;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAmountOfLiters" layoutX="793.0" layoutY="123.0" onKeyReleased="#amountOfqtyOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Amount Of Liters" style="-fx-background-color: #FDFEFE;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtHarvestType" layoutX="91.0" layoutY="274.0" onKeyReleased="#harvestTypeOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Harvest Type" style="-fx-background-color: #FDFEFE;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtQualityNotes" layoutX="91.0" layoutY="198.0" onKeyReleased="#qualityNotesOnKeyRelleased" prefHeight="35.0" prefWidth="236.0" promptText="Quality Notes" style="-fx-background-color: #FDFEFE;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <Line endX="809.0" endY="-7.0" layoutX="283.0" layoutY="82.0" startX="-227.0" startY="-7.0" />
+      <JFXButton layoutX="602.0" layoutY="339.0" onAction="#btnSetOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: orange;" text="Set" textFill="#f8f8f5">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="711.0" layoutY="340.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: green;" text="Update" textFill="#fffefa">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="821.0" layoutY="341.0" onAction="#btnDeleteOnAction" prefHeight="21.0" prefWidth="99.0" style="-fx-background-color: blue;" text="Delete" textFill="#f8f8f6">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="931.0" layoutY="342.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: red;" text="Clear" textFill="#fcfbfa">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="93.0" layoutY="102.0" text="Harvest Id" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="91.0" layoutY="178.0" text="Quality Notes" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="104.0" text="Production Date" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="92.0" layoutY="255.0" text="Harvest Type" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="795.0" layoutY="104.0" text="Amount Of qty" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="943.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-clear-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="831.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-delete-30.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="719.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-update-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="612.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-add-50.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtGrade" layoutX="443.0" layoutY="274.0" onKeyReleased="#gradeOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Grade" style="-fx-background-color: #FDFEFE;">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="446.0" layoutY="253.0" prefHeight="1.0" prefWidth="57.0" text="Grade" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbBeehiveId" layoutX="443.0" layoutY="198.0" prefHeight="35.0" prefWidth="236.0" />
+      <ComboBox fx:id="cmbCollectorId" layoutX="793.0" layoutY="198.0" prefHeight="35.0" prefWidth="236.0" />
+      <Label layoutX="443.0" layoutY="178.0" text="Beehive Id" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="178.0" text="Collector Id" textFill="ORANGE">
+         <font>
+            <Font name="Verdana Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

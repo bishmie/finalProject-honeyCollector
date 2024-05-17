@@ -38,17 +38,17 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCollectorId" layoutX="101.0" layoutY="147.0" onAction="#txtSearchOnAction" onKeyReleased="#customerIdOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Collector Id" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCollectorId" layoutX="101.0" layoutY="147.0" onAction="#txtSearchOnAction" onKeyReleased="#collectorIdOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Collector Id" style="-fx-background-color: #FDFEFE;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtCollectorName" layoutX="444.0" layoutY="149.0" prefHeight="35.0" prefWidth="236.0" promptText="collector Name" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtCollectorName" layoutX="444.0" layoutY="149.0" onKeyReleased="#customerNameOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="collector Name" style="-fx-background-color: #FDFEFE;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAddress" layoutX="793.0" layoutY="150.0" prefHeight="35.0" prefWidth="236.0" promptText="Collector Address" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtAddress" layoutX="793.0" layoutY="150.0" onKeyPressed="#addressOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Collector Address" style="-fx-background-color: #FDFEFE;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -58,7 +58,7 @@
             <Font name="Arial" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtEmail" layoutX="443.0" layoutY="233.0" onKeyReleased="#emailAddressOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Email Address" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtEmail" layoutX="443.0" layoutY="233.0" onKeyReleased="#emailOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Email Address" style="-fx-background-color: #FDFEFE;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -139,7 +139,7 @@
             <Image url="@../icon/icons8-add-50.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtSlry" layoutX="793.0" layoutY="233.0" prefHeight="35.0" prefWidth="236.0" promptText="Salary" style="-fx-background-color: #FDFEFE;">
+      <TextField fx:id="txtSlry" layoutX="793.0" layoutY="233.0" onKeyPressed="#salaryOnKeyReleased" prefHeight="35.0" prefWidth="236.0" promptText="Salary" style="-fx-background-color: #FDFEFE;">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
