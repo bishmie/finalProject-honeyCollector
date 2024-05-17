@@ -161,6 +161,7 @@ public class HarvestDetailController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
 
     }
 
@@ -193,6 +194,7 @@ public class HarvestDetailController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        clearFields();
 
     }
 
@@ -237,6 +239,7 @@ public class HarvestDetailController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
 
     }
 

@@ -129,6 +129,7 @@ public class HiveManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     private void clearFields() {
@@ -169,7 +170,7 @@ public class HiveManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-
+clearFields();
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
@@ -188,12 +189,9 @@ public class HiveManageController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
-
-    public void btnClearOnAction(ActionEvent actionEvent) {
         clearFields();
-
     }
+
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
         String id = txtHiveid.getText();

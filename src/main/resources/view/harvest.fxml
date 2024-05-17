@@ -80,11 +80,6 @@
             <Font name="Calibri Bold" size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="931.0" layoutY="342.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="99.0" style="-fx-background-color: red;" text="Clear" textFill="#fcfbfa">
-         <font>
-            <Font name="Calibri Bold" size="14.0" />
-         </font>
-      </JFXButton>
       <Label layoutX="93.0" layoutY="102.0" text="Harvest Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
@@ -110,11 +105,6 @@
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="943.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../icon/icons8-clear-50.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="16.0" fitWidth="26.0" layoutX="831.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-delete-30.png" />
