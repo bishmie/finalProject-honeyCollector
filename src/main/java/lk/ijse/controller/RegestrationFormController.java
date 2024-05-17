@@ -10,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
+import lk.ijse.util.Regex;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -27,6 +28,11 @@ public class RegestrationFormController {
 
 
     public void btnSignupOnAction(ActionEvent actionEvent) throws SQLException, IOException {
+        if (!isValid()) {
+            // If validation fails, show an error alert and return early
+            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
+            return;
+        }
         String id = txtUserId.getText();
         String name = txtName.getText();
         String password = txtPassword.getText();
@@ -65,14 +71,26 @@ public class RegestrationFormController {
     }
 
     public void userIdOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME, txtUserId);
     }
 
     public void userNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.NAME, txtName);
     }
 
     public void passwordOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.PASSWORD, txtPassword);
     }
 
     public void emailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.util.TextField.EMAIL, txtEmail);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.util.TextField.NAME,txtUserId)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.NAME,txtName)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.PASSWORD,txtPassword)) return false;
+        if (!Regex.setTextColor(lk.ijse.util.TextField.EMAIL,txtEmail)) return false;
+
+        return true;
     }
 }

@@ -22,8 +22,8 @@ public class Regex {
                 filed = "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$";
                 break;
             case PASSWORD:
-                filed = "^(?=.[a-zA-Z])(?=.\\d)(?=.[@$!%?&])[A-Za-z\\d@$!%?&]{8,}$";
-               // filed = "^\\d{4}$";
+                //filed = "^(?=.[a-zA-Z])(?=.\\d)(?=.[@$!%?&])[A-Za-z\\d@$!%?&]{8,}$";
+                filed = "^\\d{4}$";
                 break;
             case CID:
                 filed = "^C\\d{3,}$";

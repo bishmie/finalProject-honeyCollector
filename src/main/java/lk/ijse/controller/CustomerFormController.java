@@ -201,11 +201,7 @@ public class CustomerFormController {
 
     @FXML
      void btnDeleteOnAction(ActionEvent actionEvent) {
-        if (!isValid()) {
-            // If validation fails, show an error alert and return early
-            new Alert(Alert.AlertType.ERROR, "Please ensure all fields are correctly filled out.").show();
-            return;
-        }
+
         String id = txtCustomerId.getText();
 
         try {
@@ -219,7 +215,7 @@ public class CustomerFormController {
         clearFields();
     }
 
-   
+
 
     public void btnDashBoardOnAction(ActionEvent actionEvent) throws IOException {
         navigateToDashBoard();
