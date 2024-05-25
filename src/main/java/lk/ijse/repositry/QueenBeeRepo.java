@@ -41,7 +41,7 @@ public class QueenBeeRepo {
     }
 
     public static List<beeQueen> getAll() throws SQLException {
-        String sql = "SELECT * FROM beequeen WHERE beehiveId IS NULL ";
+        String sql = "SELECT * FROM beequeen WHERE beehiveId IS NOT NULL ";
 
         Connection con = DbConnection.getInstance().getConnection();
 

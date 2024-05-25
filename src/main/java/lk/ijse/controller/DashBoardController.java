@@ -14,21 +14,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
 
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
+import java.util.ArrayList;
+import java.util.List;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -36,6 +34,7 @@ import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 import javafx.scene.layout.StackPane;
+import lk.ijse.model.Product;
 
 
 public class DashBoardController {
@@ -80,9 +79,22 @@ public class DashBoardController {
         TodayOrders();
         TotalRevenue();
         initializer();
+        // checkAndShowLowStockAlert();
         // ProductDashboard();
     }
-    public void initializer(){
+
+
+
+
+
+
+
+
+
+
+
+
+public void initializer(){
        slider.setTranslateX(-176);
 
         Menu.setOnMouseClicked(event ->{
@@ -110,6 +122,9 @@ public class DashBoardController {
             });
         });
     }
+
+
+
 
     private void TotalRevenue() {
         try {

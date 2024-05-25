@@ -127,7 +127,7 @@ public class BeeHiveRepo {
         pstm.setObject(3,population);
         pstm.setObject(4,inspectionDate);
         pstm.setObject(5,inspectionResult);
-        pstm.setObject(7,id);
+        pstm.setObject(6,id);
 
         return pstm.executeUpdate() > 0;
     }

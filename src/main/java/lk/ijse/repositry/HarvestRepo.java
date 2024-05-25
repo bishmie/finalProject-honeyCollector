@@ -14,10 +14,12 @@ import java.util.List;
 public class HarvestRepo {
 
     public static boolean save(Harvest harvest) throws SQLException {
-        String sql = "INSERT INTO harvest VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+
+        String sql = "INSERT INTO harvest VALUES(?, ?, ?, ?,?,?,?,?)";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
+
         pstm.setObject(1, harvest.getHarvestId());
         pstm.setObject(2, harvest.getProductionDate());
         pstm.setObject(3, harvest.getAmountOfLiters());
@@ -26,8 +28,6 @@ public class HarvestRepo {
         pstm.setObject(6, harvest.getCollectorId());
         pstm.setObject(7, harvest.getHarvestType());
         pstm.setObject(8, harvest.getGrade());
-
-
 
         return pstm.executeUpdate() > 0;
     }

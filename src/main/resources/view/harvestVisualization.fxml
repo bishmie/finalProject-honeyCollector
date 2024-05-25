@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HarvestVisualizerController">
+   <children>
+      <Label layoutX="361.0" layoutY="22.0" text="HARVEST  DATA  VISUALIZATION" textFill="#2e4053">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Line endX="729.0" layoutX="381.0" layoutY="75.0" startX="-336.0" />
+      <PieChart fx:id="pieChart" layoutX="26.0" layoutY="94.0" />
+   </children>
+</AnchorPane>

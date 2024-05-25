@@ -5,18 +5,20 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmailFormController">
    <children>
-      <JFXButton buttonType="RAISED" layoutX="416.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #2e4053;" text=" Send Email" textFill="WHITE">
+      <JFXButton buttonType="RAISED" layoutX="360.0" layoutY="517.0" onAction="#btnSendOnAction" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #2e4053;" text=" Send Email" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></JFXButton>
-      <TextArea fx:id="txtAreaMassege" layoutX="256.0" layoutY="113.0" prefHeight="179.0" prefWidth="479.0" />
-      <Label layoutX="406.0" layoutY="24.0" opacity="0.94" text="SEND EMAILS" textAlignment="JUSTIFY" textFill="#2e4053">
+      <TextArea fx:id="txtAreaMassege" layoutX="217.0" layoutY="113.0" prefHeight="179.0" prefWidth="362.0" />
+      <Label layoutX="325.0" layoutY="24.0" opacity="0.94" text="SEND EMAILS" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
@@ -26,7 +28,7 @@
             <Font name="Calibri Bold" size="30.0" />
          </font>
       </Label>
-      <Line endX="728.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
+      <Line endX="266.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
       <Label layoutX="63.0" layoutY="324.0" text="Customer Id:" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
@@ -42,12 +44,17 @@
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtEmail" layoutX="256.0" layoutY="422.0" prefHeight="25.0" prefWidth="333.0" />
-      <ComboBox fx:id="cmbCustomerName" layoutX="256.0" layoutY="320.0" onAction="#cmbCustomerOnAction" prefHeight="25.0" prefWidth="248.0" style="-fx-background-color: white;" />
+      <JFXTextField fx:id="txtEmail" layoutX="213.0" layoutY="422.0" prefHeight="25.0" prefWidth="333.0" />
+      <ComboBox fx:id="cmbCustomerName" layoutX="216.0" layoutY="320.0" onAction="#cmbCustomerOnAction" prefHeight="25.0" prefWidth="248.0" style="-fx-background-color: white;" />
       <Label layoutX="16.0" layoutY="34.0" text="Now you can interact with your customers" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="10.0" />
          </font>
       </Label>
+      <ImageView fitHeight="731.0" fitWidth="485.0" layoutX="656.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/pexels-anete-lusina-5247966.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

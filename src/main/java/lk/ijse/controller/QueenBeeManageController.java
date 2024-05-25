@@ -245,8 +245,8 @@ public class QueenBeeManageController {
                 String bodyFeatures = resultSet.getString(3);
                 String healthStatus = resultSet.getString(4);
                 String introducedDate = resultSet.getString(5);
-                String beehiveId = resultSet.getString(7);
-                String variety = resultSet.getString(6);
+                String beehiveId = resultSet.getString(6);
+                String variety = resultSet.getString(7);
 
 
 

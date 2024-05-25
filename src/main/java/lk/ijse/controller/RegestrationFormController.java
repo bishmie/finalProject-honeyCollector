@@ -43,7 +43,7 @@ public class RegestrationFormController {
         if(isSaved) {
             new Alert(Alert.AlertType.CONFIRMATION, "You are successfully saved! as a user").show();
         }
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"));
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/Employeedashboard.fxml"));
 
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="rootNode" prefHeight="215.0" prefWidth="507.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.lowStockAlertContreoller">
+   <children>
+      <Label layoutX="143.0" layoutY="74.0" text="STOCK LEVEL IS LOW IN" textFill="#140843">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblProductId" layoutX="344.0" layoutY="74.0" text="           ">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="83.0" layoutX="254.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-no-more-flakes-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="30.0" layoutX="491.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-cross-48.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="12.0" layoutY="27.0" text="Reminder" textFill="#140843">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Line endX="370.0" endY="2.0" layoutX="143.0" layoutY="19.0" startX="-143.0" startY="1.0" />
+   </children>
+</AnchorPane>

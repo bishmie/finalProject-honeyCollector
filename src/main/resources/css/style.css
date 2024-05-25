@@ -1,4 +1,8 @@
+
+.button {
+    -fx-background-color:  #2E4053;
+}
 .button:hover {
 
-    -fx-animated: #566573;/* Text color on hover */
+    -fx-border-color: white;/* Text color on hover */
 }

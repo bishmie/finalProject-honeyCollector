@@ -53,7 +53,7 @@ public class Regex {
                 filed = "^[1-9]\\d*$";
                 break;
             case DATE:
-                filed ="\\d{1,2}\\/\\d{1,2}\\/\\d{2,4}";
+                filed ="^(19|20)\\d\\d-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$";
                 break;
             case PRICE:
                 filed ="^([0-9]){1,}[.]([0-9]){1,}$";
@@ -74,7 +74,7 @@ public class Regex {
                 filed = "^HA\\d{3,}$";
                 break;
             case  AMOUNT:
-                filed = "^\\d+(\\.\\d+)?\\s?(ml|l)$";
+                filed = "^[A-Za-z0-9\\s!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$";
                 break;
             case GRADE:
                 filed ="^[ABC]$";
