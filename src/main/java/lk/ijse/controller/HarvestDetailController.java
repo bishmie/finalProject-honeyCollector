@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
@@ -15,6 +17,7 @@ import lk.ijse.repositry.HarvestRepo;
 import lk.ijse.repositry.collectorRepo;
 import lk.ijse.util.Regex;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -297,5 +300,25 @@ public class HarvestDetailController {
         if (!Regex.setTextColor(lk.ijse.util.TextField.DESCRIPTION,txtHarvestType)) return false;
         if (!Regex.setTextColor(lk.ijse.util.TextField.GRADE,txtGrade)) return false;
         return true;
+    }
+
+    public void btnInsightsOnAction(ActionEvent actionEvent) {
+        navigateToTheInsightPage();
+
+    }
+
+    private void navigateToTheInsightPage() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/harvestVisualization.fxml"));
+        Parent PerenetRootNode = null;
+
+        try {
+            PerenetRootNode = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        rootNode.getChildren().clear();
+        rootNode.getChildren().add(PerenetRootNode);
     }
 }

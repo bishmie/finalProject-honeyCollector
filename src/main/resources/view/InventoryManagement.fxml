@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -28,34 +29,34 @@
             <Font name="Arial Bold" size="11.0" />
          </font>
       </Label>
-      <TextField fx:id="txtInventoryId" layoutX="30.0" layoutY="156.0" onAction="#txtSearchOnAction" onKeyReleased="#inventoryIdOnKeyReleased" prefHeight="46.0" prefWidth="269.0" promptText="Inventory Id" style="-fx-background-color: white;">
+      <TextField fx:id="txtInventoryId" layoutX="29.0" layoutY="134.0" onAction="#txtSearchOnAction" onKeyReleased="#inventoryIdOnKeyReleased" prefHeight="35.0" prefWidth="257.0" promptText="Inventory Id" style="-fx-background-color: white;">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtType" layoutX="404.0" layoutY="154.0" onKeyReleased="#typeOnKeyReleased" prefHeight="46.0" prefWidth="269.0" promptText="Type" style="-fx-background-color: white;">
+      <TextField fx:id="txtType" layoutX="404.0" layoutY="134.0" onKeyReleased="#typeOnKeyReleased" prefHeight="35.0" prefWidth="257.0" promptText="Type" style="-fx-background-color: white;">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtDescription" layoutX="810.0" layoutY="154.0" onKeyReleased="#descriptionOnKeyReleased" prefHeight="46.0" prefWidth="269.0" promptText="Description" style="-fx-background-color: white;">
+      <TextField fx:id="txtDescription" layoutX="809.0" layoutY="134.0" onKeyReleased="#descriptionOnKeyReleased" prefHeight="35.0" prefWidth="257.0" promptText="Description" style="-fx-background-color: white;">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtQty" layoutX="29.0" layoutY="261.0" onKeyReleased="#qtyOnKeyReleased" prefHeight="46.0" prefWidth="269.0" promptText="Qauntity" style="-fx-background-color: white;">
+      <TextField fx:id="txtQty" layoutX="27.0" layoutY="219.0" onKeyReleased="#qtyOnKeyReleased" prefHeight="35.0" prefWidth="257.0" promptText="Qauntity" style="-fx-background-color: white;">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtUnitPrice" layoutX="404.0" layoutY="261.0" onKeyReleased="#unitPriceOnKeyReleased" prefHeight="46.0" prefWidth="269.0" promptText="Unit Price" style="-fx-background-color: white;">
+      <TextField fx:id="txtUnitPrice" layoutX="404.0" layoutY="219.0" onKeyReleased="#unitPriceOnKeyReleased" prefHeight="35.0" prefWidth="257.0" promptText="Unit Price" style="-fx-background-color: white;">
          <font>
             <Font name="Arial Bold" size="13.0" />
          </font>
       </TextField>
       <Line endX="728.0" layoutX="359.0" layoutY="83.0" startX="-296.0" />
-      <ComboBox fx:id="cmbBeeHiveId" editable="true" layoutX="810.0" layoutY="261.0" prefHeight="46.0" prefWidth="269.0" promptText="Bee Hive Id" style="-fx-background-color: white;" />
-      <JFXButton buttonType="RAISED" layoutX="732.0" layoutY="353.0" onAction="#btnSetOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: green;" text="SAVE" textFill="#f8f8f5">
+      <ComboBox fx:id="cmbBeeHiveId" editable="true" layoutX="809.0" layoutY="219.0" prefHeight="35.0" prefWidth="257.0" promptText="Bee Hive Id" style="-fx-background-color: white;" />
+      <JFXButton buttonType="RAISED" layoutX="728.0" layoutY="275.0" onAction="#btnSetOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: green;" text="SAVE" textFill="#f8f8f5">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -63,7 +64,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="851.0" layoutY="352.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: brown;" text="    UPDATE" textFill="#fffefa">
+      <JFXButton buttonType="RAISED" layoutX="848.0" layoutY="275.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: brown;" text="    UPDATE" textFill="#fffefa">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -71,7 +72,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="971.0" layoutY="352.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: red;" text="  DELETE" textFill="#f8f8f6">
+      <JFXButton buttonType="RAISED" layoutX="966.0" layoutY="275.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: red;" text="  DELETE" textFill="#f8f8f6">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font>
@@ -79,50 +80,51 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="744.0" layoutY="357.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="741.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-download-50.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="860.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="861.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-update-24.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="26.0" layoutX="978.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="26.0" layoutX="974.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icon/icons8-delete-30.png" />
          </image>
       </ImageView>
-      <Label layoutX="30.0" layoutY="131.0" text="Inventory Id" textFill="#2e4053">
+      <Label layoutX="30.0" layoutY="111.0" text="Inventory Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="236.0" text="Quantity" textFill="#2e4053">
+      <Label layoutX="27.0" layoutY="199.0" text="Quantity" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="404.0" layoutY="131.0" text="Type" textFill="#2e4053">
+      <Label layoutX="404.0" layoutY="111.0" text="Type" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="404.0" layoutY="236.0" text="Unit Price" textFill="#2e4053">
+      <Label layoutX="404.0" layoutY="199.0" text="Unit Price" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="810.0" layoutY="131.0" text="Description" textFill="#2e4053">
+      <Label layoutX="809.0" layoutY="111.0" text="Description" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="811.0" layoutY="236.0" text="Beehive Id" textFill="#2e4053">
+      <Label layoutX="810.0" layoutY="199.0" text="Beehive Id" textFill="#2e4053">
          <font>
             <Font name="Verdana Bold" size="13.0" />
          </font>
       </Label>
+      <PieChart fx:id="pieChart" layoutX="60.0" layoutY="265.0" prefHeight="436.0" prefWidth="629.0" title="INVENTORY STOCK" />
    </children>
 </AnchorPane>

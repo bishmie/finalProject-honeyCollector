@@ -6,15 +6,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="rootNode" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HarvestVisualizerController">
+<AnchorPane fx:id="rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="1132.0" style="-fx-background-color: #F4D03F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.HarvestVisualizerController">
    <children>
-      <Label layoutX="361.0" layoutY="22.0" text="HARVEST  DATA  VISUALIZATION" textFill="#2e4053">
+      <PieChart fx:id="pieChart" layoutX="222.0" layoutY="133.0" prefHeight="557.0" prefWidth="664.0" title="AMOUNT OF LITRES IN EACH HARVEST(ml)" />
+      <Label layoutX="405.0" layoutY="35.0" opacity="0.94" text="HARVEST  DATA  VISUALIZATION" textAlignment="JUSTIFY" textFill="#2e4053">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Line endX="729.0" layoutX="381.0" layoutY="75.0" startX="-336.0" />
-      <PieChart fx:id="pieChart" layoutX="26.0" layoutY="94.0" />
+      <Line endX="869.0" layoutX="220.0" layoutY="88.0" startX="-168.0" />
    </children>
 </AnchorPane>

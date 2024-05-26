@@ -1,13 +1,20 @@
 package lk.ijse.controller;
 
+import javafx.application.Application;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.DepthTest;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.ijse.db.DbConnection;
 import lk.ijse.repositry.BeeHiveRepo;
 import lk.ijse.repositry.CustomerRepo;
@@ -15,13 +22,15 @@ import lk.ijse.repositry.InventoryRepo;
 import lk.ijse.repositry.SupplierRepo;
 import lk.ijse.util.Regex;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class InventoryFormController {
+public class InventoryFormController implements Initializable {
 
 
     public AnchorPane rootNode;
@@ -37,6 +46,38 @@ public class InventoryFormController {
     public ComboBox cmbBeeHiveId;
     public TextField txtContact;
     public TextField txtEmail;
+
+    @FXML
+    private PieChart pieChart;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                        new PieChart.Data("Wooden Bars", 20),
+                        new PieChart.Data("Boxes", 45),
+                        new PieChart.Data("sugar syrup", 60),
+                        new PieChart.Data("Queen Catcher", 50),
+                        new PieChart.Data("Gloves",39),
+                        new PieChart.Data("bee brush",10));
+
+
+        pieChartData.forEach(data ->
+                data.nameProperty().bind(
+                        Bindings.concat(
+                                data.getName(), " amount: ", data.pieValueProperty()
+                        )
+                )
+        );
+
+        pieChart.getData().addAll(pieChartData);
+
+
+
+        pieChart.setDepthTest(DepthTest.ENABLE);
+        pieChart.setStartAngle(90); // Adjust start angle for a 3D-like effect
+
+    }
 
     public void initialize() {
         getBeeHiveIds();

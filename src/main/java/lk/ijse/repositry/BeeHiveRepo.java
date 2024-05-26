@@ -117,7 +117,7 @@ public class BeeHiveRepo {
     }
 
     public static boolean update2(String id, String type, String location, String population, String inspectionDate, String inspectionResult) throws SQLException {
-        String sql = "UPDATE beehive SET type =?, location =?,population =?, inspectionDate =?, inspectionResult =?, queenId =? WHERE beehiveId =?";
+        String sql = "UPDATE beehive SET type =?, location =?,population =?, inspectionDate =?, inspectionResult =? WHERE beehiveId =?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);

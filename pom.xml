@@ -35,12 +35,14 @@
             <version>11.2.0</version>
         </dependency>
 
+
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
             <version>1.6.2</version>
 
         </dependency>
+
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -53,5 +55,18 @@
             <artifactId>jasperreports</artifactId>
             <version>6.20.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
+        <!-- ZXing JavaSE library for additional functionality -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
     </dependencies>
 </project>

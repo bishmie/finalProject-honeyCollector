@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="qualityGrades" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5c64fc2-91a0-4c8a-9eae-ef232574e90d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (8)"/>
+	<queryString language="SQL">
+		<![CDATA[select harvestId,productionDate,amountOfLitres,qualityNotes from harvest;]]>
+	</queryString>
+	<field name="harvestId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="harvestId"/>
+		<property name="com.jaspersoft.studio.field.label" value="harvestId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<field name="productionDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="productionDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="productionDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<field name="amountOfLitres" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="amountOfLitres"/>
+		<property name="com.jaspersoft.studio.field.label" value="amountOfLitres"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<field name="qualityNotes" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="qualityNotes"/>
+		<property name="com.jaspersoft.studio.field.label" value="qualityNotes"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="harvest"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="251" y="17" width="100" height="30" uuid="26cb1595-c0fd-460d-879e-140a7b9ea0ce"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="1" width="100" height="30" forecolor="#000000" uuid="5c3c4bcd-816e-4337-b710-a7160b32f128"/>
+				<textElement textAlignment="Center" rotation="None" markup="none">
+					<font fontName="Impact" size="24" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[CNS ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="236" y="26" width="100" height="30" uuid="fa3c5bfd-efe3-4fb8-93f3-a361a8a6c312"/>
+				<textElement>
+					<font fontName="Cambria Math" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HONEY COLLECTORS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="38" width="100" height="30" uuid="dc2a9372-edf7-481f-a45e-d750bd4fbb34"/>
+				<text><![CDATA[NO.18 Kalawana.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="47" width="100" height="30" uuid="e7f34ed1-bc29-4673-ad46-98cfb84e2632"/>
+				<text><![CDATA[Rathnapura]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="36" y="68" width="500" height="1" uuid="3cd25673-0a97-4858-bee4-a2593103dd65"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="237" y="72" width="100" height="30" forecolor="#F22824" uuid="291426a0-3eb9-42c5-9290-3472bdddea8a"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUALITY ANALYZE ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="10" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="100" height="30" uuid="7e40ca84-34e5-43c0-bb49-8a016f00f3fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95eef0c6-ae4c-4dc1-9623-9c7858652a8c"/>
+				</reportElement>
+				<text><![CDATA[harvestId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="0" width="100" height="30" uuid="9cb51feb-680f-4842-8a50-a1e29fa7ccd3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1469f6e5-f9c2-4766-abb4-258d9e025050"/>
+				</reportElement>
+				<text><![CDATA[productionDate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="100" height="30" uuid="a8c5c286-5cf4-4929-be44-94eed9a4130a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="057901e8-2f4b-47c2-ae04-baaa12fce414"/>
+				</reportElement>
+				<text><![CDATA[amountOfLitres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="0" width="100" height="30" uuid="3f7357b2-02be-49b2-8aef-7723f9961fcb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8e54671f-e197-428f-89fb-9daee4a14284"/>
+				</reportElement>
+				<text><![CDATA[qualityNotes]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="158" splitType="Stretch">
+			<textField>
+				<reportElement x="21" y="50" width="100" height="30" uuid="52973d4d-a8d7-4175-bd2c-7a9e741b47bc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95eef0c6-ae4c-4dc1-9623-9c7858652a8c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{harvestId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="50" width="100" height="30" uuid="8dfef9f5-3fe2-4c34-82cb-037787f13639">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1469f6e5-f9c2-4766-abb4-258d9e025050"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{productionDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="50" width="100" height="30" uuid="09e814d6-f1f7-4bf9-b455-1afb68439b38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="057901e8-2f4b-47c2-ae04-baaa12fce414"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{amountOfLitres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="50" width="100" height="30" uuid="f1b75eaf-5238-43ce-8fbc-7dbb57b041ab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8e54671f-e197-428f-89fb-9daee4a14284"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{qualityNotes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

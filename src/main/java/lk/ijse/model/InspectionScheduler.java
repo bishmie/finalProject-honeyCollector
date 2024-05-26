@@ -23,7 +23,7 @@ public class InspectionScheduler {
 
     private void checkAndSendEmails() {
         try (Connection conn = DriverManager.getConnection(jdbcUrl, jdbcUser, jdbcPassword)) {
-            String query = "SELECT b.beekeeperId, bm.beehiveId, bm.inspectionDate, bm.email FROM beehive bm JOIN beehiveManage b ON bm.beehiveId = b.beehiveId WHERE bm.inspectionDate = CURDATE()";
+            String query = "SELECT b.beekeeperId, bm.beehiveId, bm.inspectionDate, bk.email FROM beehive bm JOIN beehiveManage b ON bm.beehiveId = b.beehiveId JOIN beekeeper bk ON bk.beekeeperId = b.beekeeperId WHERE bm.inspectionDate = CURDATE()";
             try (PreparedStatement stmt = conn.prepareStatement(query); ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     String beekeeperId = String.valueOf(rs.getInt("beekeeperId"));
