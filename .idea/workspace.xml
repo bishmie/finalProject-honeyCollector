@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d470765-a670-4ca8-97b4-f005233f5a9c" name="Changes" comment="First commit...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/GenerateQRCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/qualityGrades.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestVisualizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestVisualizerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/InventoryFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/InventoryFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/model/InspectionScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/model/InspectionScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/BeeHiveRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/BeeHiveRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/repositry/hiveVisualizeRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/InventoryManagement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/harvest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/harvest.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/harvestVisualization.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/harvestVisualization.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon/Untitled design.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,34 +50,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GenerateQRCode.executor": "Run",
-    "Application.InspectionScheduler.executor": "Run",
-    "Application.LauncherWrapper.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/finalproject1/final/src/main/resources/reports",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GenerateQRCode.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InspectionScheduler.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LauncherWrapper.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/finalproject1/final/src/main/resources/reports&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\finalproject1\final\src\main\resources\reports" />
@@ -187,6 +177,15 @@
       <workItem from="1716485612353" duration="8206000" />
       <workItem from="1716629666842" duration="20620000" />
       <workItem from="1716665838907" duration="9698000" />
+      <workItem from="1716721153595" duration="3128000" />
+      <workItem from="1716737215255" duration="3466000" />
+      <workItem from="1716790411177" duration="2168000" />
+      <workItem from="1716792732100" duration="89000" />
+      <workItem from="1716793429944" duration="436000" />
+      <workItem from="1716797269617" duration="306000" />
+      <workItem from="1716797665738" duration="506000" />
+      <workItem from="1716827135309" duration="1341000" />
+      <workItem from="1716832352522" duration="770000" />
     </task>
     <task id="LOCAL-00001" summary="First commit...">
       <option name="closed" value="true" />
@@ -299,8 +298,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/controller/HarvestDetailController.java</url>
-          <line>178</line>
+          <line>187</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/controller/CustomerFormController.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/lk/ijse/controller/DashBoardController.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -121,6 +122,51 @@ public void initializer(){
                 MenuBack.setVisible(false);
             });
         });
+    try {
+        checkLowStock();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        showAlert(Alert.AlertType.ERROR, "Database Error", "Unable to fetch stock data.");
+    }
+    }
+    private void checkLowStock() throws SQLException {
+        Connection connection = null;
+        PreparedStatement pstmt = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DbConnection.getInstance().getConnection();
+            String query = "SELECT productName, qty FROM product WHERE qty < 10";
+            pstmt = connection.prepareStatement(query);
+            resultSet = pstmt.executeQuery();
+
+            StringBuilder lowStockItems = new StringBuilder();
+            while (resultSet.next()) {
+                String productName = resultSet.getString("productName");
+                int qty = resultSet.getInt("qty");
+                lowStockItems.append(productName).append(" (").append(qty).append(" units)\n");
+            }
+
+            if (lowStockItems.length() > 0) {
+                Platform.runLater(() -> showAlert(Alert.AlertType.WARNING, "Low Stock Alert", "The following products have low stock:\n" + lowStockItems.toString()));
+            }
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (pstmt != null) pstmt.close();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 
